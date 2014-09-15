@@ -1,14 +1,14 @@
 {
-  "name": "roots",
-  "version": "7.0.1",
-  "author": "Ben Word <ben@benword.com>",
-  "homepage": "http://roots.io",
+  "name": "alvascentrum",
+  "version": "1.0.1",
+  "author": "Gabor Szabó <szabogabi@gmail.com>",
+  "homepage": "http://hydrogene.hu",
   "repository": {
     "type": "git",
-    "url": "git://github.com/roots/roots.git"
+    "url": "git://github.com/ceto/alvascentrum.git"
   },
   "bugs": {
-    "url": "https://github.com/roots/roots/issues"
+    "url": "https://github.com/ceto/alvascentrum/issues"
   },
   "licenses": [
     {
@@ -34,6 +34,6 @@
     "grunt-wp-assets": "~0.2.6",
     "load-grunt-tasks": "~0.6.0",
     "time-grunt": "~0.4.0",
-    "grunt-sass": "~0.14.1",
+    "grunt-sass": "~0.14.1"
   }
 }
