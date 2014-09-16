@@ -1,0 +1,30 @@
+//
+// Component animations
+// --------------------------------------------------
+
+.fade {
+  opacity: 0;
+  transition:opacity .15s linear;
+  &.in {
+    opacity: 1;
+  }
+}
+
+.collapse {
+  display: none;
+
+  &.in      { display: block; }
+  // [converter] extracted tr&.in to tr.collapse.in
+  // [converter] extracted tbody&.in to tbody.collapse.in
+}
+
+tr.collapse.in    { display: table-row; }
+
+tbody.collapse.in { display: table-row-group; }
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height .35s ease;
+}
