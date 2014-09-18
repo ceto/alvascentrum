@@ -4,11 +4,18 @@
  */
 
 
-/********* Custom Post Types for Intezmeny ****************/
 
-/**
- * Treatment Custom Post Type Definition
-*/
+/***** Adding excerpt ******/
+add_action( 'init', 'ac_add_excerpts' );
+function ac_add_excerpts() {
+  add_post_type_support( 'page', 'excerpt' );
+  add_post_type_support( 'intezmeny', 'excerpt' );
+   
+}
+
+
+
+/********* Custom Post Types for Intezmeny ****************/
 
 function create_intezmeny() {
   $labels = array(

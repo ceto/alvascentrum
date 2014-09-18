@@ -1,3 +1,76 @@
+/* apply a natural box layout model to all elements */
+*,*:before,*:after {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+/* ==|== primary styles =====================================================
+   Author: Gabor Szabo
+   ========================================================================== */
+
+html,
+body {
+  font-family: "Georgia Pro", georgia, serif;
+  font-size: 24px;
+  line-height: 1.333;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+  color: #222;
+  background-color: #fff;
+  height: 100%;
+  
+  @include bp($s2){
+    font-size:16px;
+
+  }
+  @include bp($s3){
+    font-size:26px;
+  }
+}
+
+a {
+  color: #2455c3;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+p {
+  /* -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto; */
+  -moz-font-feature-settings: "liga=1, dlig=1, onum=1";
+  -moz-font-feature-settings: "liga", "dlig", "onum";
+  -ms-font-feature-settings: "liga", "dlig", "onum";
+  -webkit-font-feature-settings: "liga", "dlig", "onum";
+  -o-font-feature-settings: "liga", "dlig", "onum";
+  font-feature-settings: "liga", "dlig", "onum";
+}
+
+html[data-useragent*='Chrome'][data-platform*='Mac'] p {
+  -webkit-font-feature-settings: normal;
+  font-feature-settings: normal;
+}
+
+:target:not(#comments):not(.global-nav) {
+  -webkit-animation: target-fade 2s 1;
+  -moz-animation: target-fade 2s 1;
+}
+
+@-webkit-keyframes target-fade {
+  0% { background-color: rgba(255,248,135,1); outline: 6px solid rgba(255,248,135,1);}
+  100% { background-color: rgba(255,248,135,0); outline: 6px solid rgba(255,248,135,0); }
+}
+@-moz-keyframes target-fade {
+  0% { background-color: rgba(255,248,135,.1); outline: 6px solid rgba(255,248,135,1); }
+  100% { background-color: rgba(255,248,135,0); outline: 6px solid rgba(255,248,135,1); }
+}
+
+
 //
 // Component animations
 // --------------------------------------------------

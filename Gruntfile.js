@@ -36,13 +36,11 @@ module.exports = function(grunt) {
     },
     sass: {
       options: {
-        outputStyle: 'nested',
+        //outputStyle: 'nested',
         sourceMap: true
       },
       dist: {
-        files: {
-          'assets/css/main.css': 'assets/scss/styles.scss'
-        }
+        files: { 'assets/css/main.css': 'assets/scss/styles.scss' }
       }
     },
     concat: {
@@ -71,10 +69,17 @@ module.exports = function(grunt) {
             prev: 'assets/css/'
           }
         },
-        src: 'assets/css/main.css'
+        src: 'assets/css/main.css',
+        dest: 'assets/css/main.min.css'
       },
       build: {
-        src: 'assets/css/main.css'
+        options: {
+          map: {
+            prev: 'assets/css/'
+          }
+        },
+        src: 'assets/css/main.css',
+        dest: 'assets/css/main.min.css'
       }
     },
     modernizr: {
@@ -137,6 +142,8 @@ module.exports = function(grunt) {
       }
     }
   });
+
+
 
   // Register tasks
   grunt.registerTask('default', [

@@ -1,0 +1,69 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'owner',
+1 verbose cli   'add',
+1 verbose cli   'szabogabi',
+1 verbose cli   'node-sass' ]
+2 info using npm@1.4.21
+3 info using node@v0.10.30
+4 verbose owner add szabogabi to node-sass
+5 verbose request where is /-/user/org.couchdb.user:szabogabi
+6 verbose request registry https://registry.npmjs.org/
+7 verbose request id 23efb2c0d6d4596c
+8 verbose url raw /-/user/org.couchdb.user:szabogabi
+9 verbose url resolving [ 'https://registry.npmjs.org/',
+9 verbose url resolving   './-/user/org.couchdb.user:szabogabi' ]
+10 verbose url resolved https://registry.npmjs.org/-/user/org.couchdb.user:szabogabi
+11 verbose request where is https://registry.npmjs.org/-/user/org.couchdb.user:szabogabi
+12 info trying registry request attempt 1 at 18:39:51
+13 http GET https://registry.npmjs.org/-/user/org.couchdb.user:szabogabi
+14 http 404 https://registry.npmjs.org/-/user/org.couchdb.user:szabogabi
+15 verbose headers { date: 'Thu, 18 Sep 2014 16:39:52 GMT',
+15 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+15 verbose headers   'content-type': 'application/json',
+15 verbose headers   'cache-control': 'max-age=0',
+15 verbose headers   'content-length': '41',
+15 verbose headers   'accept-ranges': 'bytes',
+15 verbose headers   via: '1.1 varnish',
+15 verbose headers   'x-served-by': 'cache-fra1226-FRA',
+15 verbose headers   'x-cache': 'MISS',
+15 verbose headers   'x-cache-hits': '0',
+15 verbose headers   'x-timer': 'S1411058392.611540,VS0,VE102',
+15 verbose headers   'keep-alive': 'timeout=10, max=50',
+15 verbose headers   connection: 'Keep-Alive' }
+16 silly registry.get cb [ 404,
+16 silly registry.get   { date: 'Thu, 18 Sep 2014 16:39:52 GMT',
+16 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+16 silly registry.get     'content-type': 'application/json',
+16 silly registry.get     'cache-control': 'max-age=0',
+16 silly registry.get     'content-length': '41',
+16 silly registry.get     'accept-ranges': 'bytes',
+16 silly registry.get     via: '1.1 varnish',
+16 silly registry.get     'x-served-by': 'cache-fra1226-FRA',
+16 silly registry.get     'x-cache': 'MISS',
+16 silly registry.get     'x-cache-hits': '0',
+16 silly registry.get     'x-timer': 'S1411058392.611540,VS0,VE102',
+16 silly registry.get     'keep-alive': 'timeout=10, max=50',
+16 silly registry.get     connection: 'Keep-Alive' } ]
+17 error owner mutate Error getting user data for szabogabi
+18 error Error: not_found missing: -/user/org.couchdb.user:szabogabi
+18 error     at RegClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:300:14)
+18 error     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:238:65)
+18 error     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:123:22)
+18 error     at Request.emit (events.js:98:17)
+18 error     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:893:14)
+18 error     at Request.emit (events.js:117:20)
+18 error     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:844:12)
+18 error     at IncomingMessage.emit (events.js:117:20)
+18 error     at _stream_readable.js:938:16
+18 error     at process._tickCallback (node.js:419:13)
+19 error If you need help, you may report this *entire* log,
+19 error including the npm and node versions, at:
+19 error     <http://github.com/npm/npm/issues>
+20 error System Darwin 13.3.0
+21 error command "node" "/usr/local/bin/npm" "owner" "add" "szabogabi" "node-sass"
+22 error cwd /Users/szabogabi/Documents/htdocs/alvascentrum/wp-content/themes/alvascentrum
+23 error node -v v0.10.30
+24 error npm -v 1.4.21
+25 verbose exit [ 1, true ]

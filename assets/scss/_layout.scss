@@ -1,0 +1,16 @@
+.col-holder{
+	max-width: $maximum;
+	margin: 0 auto;
+	padding-left: 12px;
+	padding-right: 12px;
+
+	@include bp($s1){
+		padding-left: 36px;
+		padding-right: 36px;
+	}
+
+	@include bp($s2){
+		padding-left: 12px;
+		padding-right: 12px;
+	}
+}

@@ -12,8 +12,7 @@ Template Name: Törzsoldalak listázása
   ?>
 <?php endwhile; ?>
 
-<?php
-	
+<?php	
 	$the_pages = new WP_Query( array(
 		'post_type' => 'page',
 		'post__not_in' => array($act_id),
@@ -22,8 +21,8 @@ Template Name: Törzsoldalak listázása
 		'posts_per_page' => -1
 	));
 ?>
-
+<div class="col-holder">
 <?php while ($the_pages->have_posts()) : $the_pages->the_post(); ?>
   <?php get_template_part('templates/content', 'torzsexp'); ?>
 <?php endwhile; ?>
-
+</div><!-- /.col-holder -->
