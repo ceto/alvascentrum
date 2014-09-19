@@ -35,13 +35,21 @@ module.exports = function(grunt) {
       ]
     },
     sass: {
-      options: {
-        //outputStyle: 'nested',
-        sourceMap: true
-      },
-      dist: {
+      dev: {
+        options: {
+          outputStyle: 'nested',
+          sourceMap: true
+        },
         files: { 'assets/css/main.css': 'assets/scss/styles.scss' }
+      },
+      build: {
+        options: {
+          outputStyle: 'nested',
+          sourceMap: true
+        },
+        files: { 'assets/css/main.min.css': 'assets/scss/styles.scss' }
       }
+
     },
     concat: {
       options: {
@@ -78,7 +86,7 @@ module.exports = function(grunt) {
             prev: 'assets/css/'
           }
         },
-        src: 'assets/css/main.css',
+        src: 'assets/css/main.min.css',
         dest: 'assets/css/main.min.css'
       }
     },
@@ -118,7 +126,7 @@ module.exports = function(grunt) {
           'assets/scss/*.scss',
           'assets/scss/**/*.scss'
         ],
-        tasks: ['sass', 'autoprefixer:dev']
+        tasks: ['sass:dev', 'autoprefixer:dev']
       },
       js: {
         files: [
@@ -151,13 +159,13 @@ module.exports = function(grunt) {
   ]);
   grunt.registerTask('dev', [
     'jshint',
-    'sass',
+    'sass:dev',
     'autoprefixer:dev',
     'concat'
   ]);
   grunt.registerTask('build', [
     'jshint',
-    'sass',
+    'sass:build',
     'autoprefixer:build',
     'uglify',
     'modernizr',
