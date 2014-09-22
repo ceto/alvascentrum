@@ -1,4 +1,3 @@
-<div class="col-holder">
   <article <?php post_class(); ?>>
     <header>
       <h1 class="entry-title"><?php the_title(); ?></h1>
@@ -13,4 +12,3 @@
     </footer>
     <?php comments_template('/templates/comments.php'); ?>
   </article>
-</div><!-- /.col-holder -->

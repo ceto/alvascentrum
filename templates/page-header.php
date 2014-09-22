@@ -1,4 +1,3 @@
-<div class="col-holder">
   <div class="page-header">
     <h1>
       <?php echo roots_title(); ?>
@@ -13,4 +12,4 @@
   		</div> 
     <?php endif; ?>
   </div>
-</div><!-- /.col-holder -->
+

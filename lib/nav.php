@@ -34,6 +34,10 @@ class Roots_Nav_Walker extends Walker_Nav_Menu {
       $item_html = preg_replace('/<a[^>]*>(.*)<\/a>/iU', '$1', $item_html);
     }
 
+    if ($item->description!='') {
+      $item_html = str_replace('</a>', ' <span class="item--descr">'.esc_html($item->description).'</span></a>', $item_html);
+    }
+
     $item_html = apply_filters('roots/wp_nav_menu_item', $item_html);
     $output .= $item_html;
   }

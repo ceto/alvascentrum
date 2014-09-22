@@ -11,26 +11,18 @@
 
 html,
 body {
-  font-family: "Georgia Pro", georgia, serif;
-  font-size: 24px;
-  line-height: 1.333;
+  font-family: $serif;
+  font-size: 16px;
+  line-height: 1.5;
   font-weight: normal;
   text-rendering: optimizeLegibility;
-  color: #222;
+  color: $gray-text;
   background-color: #fff;
   height: 100%;
-  
-  @include bp($s2){
-    font-size:16px;
-
-  }
-  @include bp($s3){
-    font-size:26px;
-  }
 }
 
 a {
-  color: #2455c3;
+  color: $blue-link;
   text-decoration: none;
 }
 

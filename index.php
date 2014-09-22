@@ -1,5 +1,4 @@
 <?php get_template_part('templates/page', 'header'); ?>
-<div class="col-holder">
   <?php if (!have_posts()) : ?>
     <div class="alert alert-warning">
       <?php _e('Sorry, no results were found.', 'roots'); ?>
@@ -21,4 +20,3 @@
       </ul>
     </nav>
   <?php endif; ?>
-</div><!-- /.col-holder -->

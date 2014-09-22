@@ -1,16 +1,96 @@
 .col-holder{
+	@include clearfix();
 	max-width: $maximum;
 	margin: 0 auto;
 	padding-left: 12px;
 	padding-right: 12px;
 
-	@include bp($s1){
-		padding-left: 36px;
-		padding-right: 36px;
+
+}
+
+
+.main--hassidebar{
+	
+	@include bp($s2){
+		width:66.666%;
+		float:left;
+		padding-right:12px;
+
 	}
 
-	@include bp($s2){
-		padding-left: 12px;
-		padding-right: 12px;
+	
+	@include bp($s3){
+		width:600px;
+		padding-left:24px;
+		border-right:1px solid lightgray;
+
 	}
+}
+
+
+.sidebar{
+
+	@include bp($s2){
+		width:33.333%;
+		float:left;
+		padding-left:12px;
+
+	}
+
+	@include bp($s3){
+		width:336px;
+		padding-left:24px;
+
+	}
+}
+
+
+
+/********** Törzslista ********/
+
+.torzs-header{
+	background-color: $blue-link;
+	color:white;
+	padding:2em 0;
+	a{
+		color:$egg;
+
+	}
+
+	h1 {
+		font-size: 26px;
+
+	}
+	.discl{
+		font-size: 24px;
+
+	}
+}
+
+.torzsexp{
+	@include bp($s2){
+		width:48%;
+		display:inline-block;
+		vertical-align: top;
+		&:nth-of-type(2n+1){
+			margin-right:4%;
+		}
+
+	}
+	
+
+	@include bp($s3){
+		width:30.666%;
+		margin-right: 4%;
+		&:nth-of-type(2n+1){
+			//margin-right:0;
+		}
+		&:nth-of-type(3n){
+			margin-right:0;			
+		}
+	}
+}
+
+.torzs--title{
+	font-family: $sans-serif;
 }

@@ -12,15 +12,21 @@
     get_template_part('templates/header');
   ?>
 
-
-  <main class="main" role="main">
-    <?php include roots_template_path(); ?>
-  </main><!-- /.main -->
-  <?php if (roots_display_sidebar()) : ?>
-    <aside class="sidebar" role="complementary">
-      <?php include roots_sidebar_path(); ?>
-    </aside><!-- /.sidebar -->
+  <?php if ( (is_page()) || (is_page_template('template-torzslista.php')) || (is_page_template('template-intezmenylista.php')) ) : ?>
+    <?php get_template_part('templates/torzs','header'); ?>
   <?php endif; ?>
+
+
+  <div class="col-holder">
+    <main class="main <?php echo roots_display_sidebar()?'main--hassidebar':''; ?>" role="main">
+      <?php include roots_template_path(); ?>
+    </main><!-- /.main -->
+    <?php if (roots_display_sidebar()) : ?>
+      <aside class="sidebar" role="complementary">
+        <?php include roots_sidebar_path(); ?>
+      </aside><!-- /.sidebar -->
+    <?php endif; ?>
+  </div>
 
   <?php get_template_part('templates/footer'); ?>
 

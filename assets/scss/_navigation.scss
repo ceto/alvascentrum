@@ -1,0 +1,53 @@
+.navbar-toggle {
+	position:fixed;
+	right:24px;
+	top:24px;
+	width:100px;
+}
+.navbar-brand{
+	position:fixed;
+	left:24px;
+	top:24px;
+	width:120px;
+	color:white;
+	font-size: 16px;
+	font-family: $sans-serif;
+	font-weight: bold;
+}
+.navbar[role="navigation"] {
+	background-color: $blue-menubg;
+}
+.navbar-nav{
+	list-style-type: none;
+	padding:0;
+	margin:0;
+	li{
+
+		> a {
+			display: block;
+			padding:12px;
+			font-size:24px;
+			font-weight: bold;
+			text-transform: uppercase;
+			font-family: $sans-serif;
+			color: $white-menu;
+			@include bp($s2){
+				padding: 24px calc(50% - 300px);
+			}
+			&:hover,&focus {
+				text-decoration: none;
+				color:white;
+				background-color: $blue-menuactbg;
+			}
+			.item--descr{
+				font-family: $serif;
+				font-size: 14px;
+				font-weight: normal;
+				display:block;
+				text-transform: none;
+				max-width: $s2;
+				
+			}
+		}
+	}
+}

@@ -3,15 +3,10 @@
 Template Name: Törzsoldalak listázása
 */
 ?>
-
-<?php while (have_posts()) : the_post(); ?>
-  <?php get_template_part('templates/page', 'header'); ?>
   <?php
-  	$act_id = get_the_ID();
-  	$act_cat = get_the_category();
+    $act_id = get_the_ID();
+    $act_cat = get_the_category();
   ?>
-<?php endwhile; ?>
-
 <?php	
 	$the_pages = new WP_Query( array(
 		'post_type' => 'page',
@@ -21,8 +16,7 @@ Template Name: Törzsoldalak listázása
 		'posts_per_page' => -1
 	));
 ?>
-<div class="col-holder">
+
 <?php while ($the_pages->have_posts()) : $the_pages->the_post(); ?>
   <?php get_template_part('templates/content', 'torzsexp'); ?>
 <?php endwhile; ?>
-</div><!-- /.col-holder -->
