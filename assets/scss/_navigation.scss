@@ -3,9 +3,11 @@
 	right:24px;
 	top:24px;
 	width:100px;
+	z-index:10;
 }
 .navbar-brand{
 	position:fixed;
+	z-index:10;
 	left:24px;
 	top:24px;
 	width:120px;
@@ -15,39 +17,77 @@
 	font-weight: bold;
 }
 .navbar[role="navigation"] {
+	z-index:9;
 	background-color: $blue-menubg;
+	// position: fixed;
+	// top:0;left:0;
+	// width:100%;
+	// bottom:0;
 }
+
 .navbar-nav{
+	@include clearfix();
 	list-style-type: none;
 	padding:0;
-	margin:0;
+	margin:4em 0;
 	li{
+		@include bp($s2){
+			width:46%;
+			float:left;
+			&:nth-child(2n+1){
+				clear:left;
+				margin-right: 8%;
+
+			}
+		}
+
 
 		> a {
 			display: block;
-			padding:12px;
-			font-size:24px;
+			padding:1em 0;
+			font-size:32px;
 			font-weight: bold;
 			text-transform: uppercase;
 			font-family: $sans-serif;
 			color: $white-menu;
-			@include bp($s2){
-				padding: 24px calc(50% - 300px);
-			}
-			&:hover,&focus {
+			&:hover,&:focus {
 				text-decoration: none;
 				color:white;
-				background-color: $blue-menuactbg;
+				//background-color: $blue-menuactbg;
 			}
 			.item--descr{
+				//display: none;
+				display:block;
 				font-family: $serif;
 				font-size: 14px;
 				font-weight: normal;
-				display:block;
+				
 				text-transform: none;
 				max-width: $s2;
 				
 			}
 		}
+	}
+}
+
+/**** SideBar nav ****/
+.widget_nav_menu .menu{
+	list-style-type: none;
+	padding:0;
+	margin:0 0 1em 0;
+	border-top: 1px dotted lightgray;
+	
+	li{
+		
+		> a {
+			display: block;
+			font-weight: bold;
+			padding:0.5em 0;
+			border-bottom: 1px dotted lightgray;
+			.item--descr{
+				display:none;
+			}
+		}
+
 	}
 }

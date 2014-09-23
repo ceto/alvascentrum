@@ -7,11 +7,13 @@
     </div>
 
     <nav class="navbar navbar-collapse collapse" role="navigation">
+      <div class="col-holder">
       <?php
         if (has_nav_menu('primary_navigation')) :
           wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav'));
         endif;
       ?>
+      </div><!-- /.col-holder -->
     </nav>
 
 </header>

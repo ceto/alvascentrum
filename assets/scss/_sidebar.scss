@@ -1,0 +1,22 @@
+
+.sidebar{
+	font-family: $sans-serif;
+
+	@include bp($s2){
+		width:33.333%;
+		float:left;
+		padding-left:12px;
+
+	}
+
+	@include bp($s3){
+		width:336px;
+		padding-left:24px;
+
+	}
+
+	.widget{
+		margin:2em 0;
+	}
+}
+
