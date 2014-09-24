@@ -15,6 +15,11 @@
   <?php if ( (is_page()) || (is_page_template('template-torzslista.php')) || (is_page_template('template-intezmenylista.php')) ) : ?>
     <?php get_template_part('templates/torzs','header'); ?>
   <?php endif; ?>
+  
+  <?php if ( is_home() || is_single() || is_archive() || is_search()) : ?>
+    <?php get_template_part('templates/page','header'); ?>
+  <?php endif; ?>
+
 
 
   <div class="col-holder">

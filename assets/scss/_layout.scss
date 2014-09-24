@@ -1,4 +1,4 @@
-.col-holder{
+.col-holder {
 	@include clearfix();
 	max-width: $maximum;
 	margin: 0 auto;
@@ -24,8 +24,12 @@
 
 
 .main {
-	padding-top: 100px;
-	padding-bottom: 100px;
+	//padding-top: 100px;
+	//padding-bottom: 100px;
+	.page-template-default & {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
 }
 
 .main--hassidebar{
@@ -43,7 +47,7 @@
 	
 	@include bp($s3){
 		width:600px;
-		padding-left:24px;
+		padding-right:24px;
 		border-right:1px solid lightgray;
 
 	}
@@ -53,7 +57,7 @@
 
 .page {
 	.entry-content{
-		p {
+		> * {
 			@include bp($s2){
 				margin-left:132px;
 				margin-right: 132px;
@@ -70,6 +74,7 @@
 
 
 .torzsexp{
+	margin:3em 0;
 	@include bp($s2){
 		width:48%;
 		display:inline-block;
@@ -95,4 +100,22 @@
 
 .torzs--title{
 	font-family: $sans-serif;
+	font-size: 22px;
+	line-height: 30px;
+	//font-weight: 400;
+	margin: 0 0 0.666em 0;
+	a{
+		color:$gray-text;
+		&:hover, &:focus {
+			color:$blue-link;
+		}
+	}
+}
+
+.torzs--summary{
+	font-size: 14px;
+	line-height: 24px;
+	p{
+		margin:0 0;
+	}
 }

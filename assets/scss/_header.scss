@@ -1,7 +1,14 @@
-.torzs-header{
-	background-color: $blue-link;
+.torzs-header, .page-header{
+	background-color: $blue-header;
 	color:white;
-	padding:2em 0;
+	.col-holder {
+		position:relative;
+		z-index: 0;
+		padding-top:5em;
+		padding-bottom: 4em;
+
+
+	}
 	a{
 		color:$egg;
 
@@ -9,11 +16,78 @@
 
 	h1 {
 		font-family: $sans-serif;
-		font-size: 50px;
+		font-size: 30px;
+		line-height: 1.25;
+		margin:0 0 0.25em;
+		@include bp($s2){
+			font-size: 50px;
+		}
 
 	}
 	.discl{
-		font-size: 24px;
+		font-size: 18px;
+		line-height: 28px;
+		color:$gray-text;
+		p {
+			margin:0;
+		}
+		@include bp($s2){
+			font-size: 24px;
+			line-height: 36px;
+		}
 
 	}
+
+}
+
+.breadcrumbs {
+	position: absolute;
+	bottom:0.5em;
+	margin:0;
+	padding:0 0 0 0;
+	height:1em;
+	overflow: hidden;
+
+	font-family: $sans-serif;
+	font-size: 16px;
+	line-height: 1em;
+	font-weight: 900;
+	text-transform: uppercase;
+	color:#8fcddd !important;
+	a {
+		color:#8fcddd !important;
+		&:hover, &:focus {
+			text-decoration: none;
+			color:#fff !important;
+		}
+	}
+
+}
+
+.fejtorzslink {
+	display: block;
+	position: absolute;
+	z-index:-1;
+	left:0; 
+	bottom:0;
+	width:100%;
+	overflow: hidden;
+	text-align: left;
+	text-decoration: none;
+	font-family: $sans-serif;
+	font-size: 25px;
+	line-height: 1em;
+	padding-top: 0.15em;
+	height:1em;
+	font-weight: 900;
+	text-transform: uppercase;
+	word-break: keep-all;
+	color:#8fcddd !important;
+	
+	&:hover, &:focus {
+		text-decoration: none;
+		//opacity: 1;
+		color:#fff !important;
+	}
+
 }

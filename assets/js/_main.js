@@ -61,3 +61,14 @@ var UTIL = {
 $(document).ready(UTIL.loadEvents);
 
 })(jQuery); // Fully reference jQuery after this point.
+
+
+$(document).ready(function() {
+  //jQuery(".fejtorzslink").fitText(0.94);
+  $('.navbar-toggle').click(function(){
+    $( this ).toggleClass('active');
+    $('.main-nav').toggleClass('show');
+  });
+});
+
+
