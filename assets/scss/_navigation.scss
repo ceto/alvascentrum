@@ -31,7 +31,7 @@
 }
 .main-nav {
 	z-index:9;
-	background-color: $blue-menubg;
+	background-color: $blue-header;
 	position: fixed;
 	top:0;left:0;
 	width:100%;
@@ -51,6 +51,12 @@
 	list-style-type: none;
 	padding:0;
 	margin:4em 0;
+	transform: translateY(-25%) scale(0.75);
+	transition: transform 0.5s;
+	.show & {
+		transform: translateY(0) scale(1);
+	}
+	
 	li{
 		@include bp($s2){
 			width:46%;
@@ -70,7 +76,7 @@
 			font-weight: bold;
 			text-transform: uppercase;
 			font-family: $sans-serif;
-			color: $white-menu;
+			color: #fff;
 			&:hover,&:focus {
 				text-decoration: none;
 				color:white;
@@ -81,10 +87,12 @@
 				display:block;
 				font-family: $serif;
 				font-size: 14px;
+				line-height: 22px;
 				font-weight: normal;
+				color:$gray-text;
 				
 				text-transform: none;
-				max-width: $s2;
+				
 				
 			}
 		}
@@ -92,7 +100,7 @@
 }
 
 /**** SideBar nav ****/
-.widget_nav_menu .menu{
+.sidebar .menu{
 	list-style-type: none;
 	padding:0;
 	margin:0 0 1em 0;
@@ -102,7 +110,9 @@
 		
 		> a {
 			display: block;
-			font-weight: bold;
+			font-weight: 400;
+			font-size: 14px;
+			//text-transform: uppercase;
 			padding:0.5em 0;
 			border-bottom: 1px dotted lightgray;
 			.item--descr{
@@ -112,3 +122,26 @@
 
 	}
 }
+
+
+/********* Site Bottom Nav *********/
+
+
+.sidebar-footer .menu, .sidebar-footer .widget_recent_entries ul{
+	list-style-type: none;
+	padding:0;
+	margin:0;
+	li{
+		
+		> a {
+			display: block;
+			font-size: 12px;
+			padding:0.25em 0;
+			.item--descr{
+				display:none;
+			}
+		}
+
+	}
+}
+

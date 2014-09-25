@@ -1,0 +1,16 @@
+.home-header{
+	min-height: 960px;
+	background-color: $blue-header;
+	color:#fff;
+
+
+	.inner {
+		max-width: $s1;
+		margin:1em auto;
+		text-align: center;
+
+		position: relative;
+  	margin-top: 50%;
+  	transform: translateY(-50%);
+	}
+}
