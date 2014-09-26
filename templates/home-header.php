@@ -3,10 +3,9 @@
     
     <div class="inner">
       <h1>Alváscentrum.hu</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur doloremque temporibus totam, minima ratione ipsa. Dolore tenetur fugit doloribus quaerat. Impedit quasi culpa, minima facere illum corrupti voluptate quis. Vel.</p>
-      <input type="search">
-      <button type="button" class="navbar-toggle">
-        <span class="sr-only">MENÜ</span>
+      <p class="intro">Választ adunk az alvászavarokkal kapcsolatos kérdéseire</p>
+      <button type="button" class="home-start navbar-toggle">
+        Merüljön el a tartalomban...
       </button>
     </div><!-- /.inner -->
   

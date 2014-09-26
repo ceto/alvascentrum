@@ -2,10 +2,17 @@
 	min-height: 960px;
 	background-color: $blue-header;
 	color:#fff;
+	position: relative;
+	z-index: 8;
+	background-image: url('../img/home_bg2.jpg');
+	background-repeat: none;
+	background-position: center center;
+	background-attachment: fixed;
+	background-size: cover;
 
 
 	.inner {
-		max-width: $s1;
+		//max-width: $s1;
 		margin:1em auto;
 		text-align: center;
 
@@ -13,4 +20,41 @@
   	margin-top: 50%;
   	transform: translateY(-50%);
 	}
+	.navbar-toggle {
+		width:auto;
+		position:static;
+
+	}
+
+	h1{
+		font-family: $sans-serif;
+
+	}
+
+	.intro{
+		font-size:26px;
+		@include bp($s2){
+			font-size: 48px;
+		}
+	}
+
+	.home-start{
+		font-family: $serif;
+		height:auto;
+		font-size: 20px;
+		line-height: 1em;
+		font-style: italic;
+		padding:0.75em 1.5em;
+		margin-top: 1em;
+		color:#fff;
+		border-color:#fff;
+		border-radius: 0;
+		border:2px solid #fff;
+		&:hover, &:focus {
+			background-color: #fff;
+			color:$blue-header;
+			border-color:$egg;
+		}
+	}
+
 }

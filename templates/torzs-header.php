@@ -20,6 +20,15 @@
       <h1>
         <?php echo roots_title(); ?>
       </h1>
+
+
+      <?php if ( (is_page() && ($post->post_parent)) ): ?>
+        <div class="header-meta">
+          <?php get_template_part('templates/entry-meta'); ?>
+          <?php //get_template_part('templates/entry-rovatok'); ?>
+        </div>
+      <?php endif; ?>
+
       <?php if ( !is_search() && !is_home() && !is_archive() ): ?>
         <div class="discl">
           <?php the_excerpt() ?>

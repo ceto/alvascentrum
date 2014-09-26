@@ -6,17 +6,21 @@
 			font-size: 14px;
 			line-height: 1.25;
 			.byline {
-				display: inline;
-				font-size: 12px;
+				display: inline-block;
+				font-style: italic;
 				a {
-					font-size: 14px;
 					font-family: $sans-serif;
+					font-style: normal;
 					font-weight: 700;
 					text-transform: uppercase;
 				}
 			}
+			.torzslink {
+				font-style: italic;
+				display: inline-block;
+			}
 			time {
-
+				display: inline-block;
 				font-style: italic;
 			}
 
@@ -27,6 +31,9 @@
 			font-size: 22px;
 			line-height: 22px;
 			margin-bottom: 5px;
+			a{
+
+			}
 		}
 
 		.entry-summary{
@@ -36,5 +43,58 @@
 				display:none;
 			}
 		}
+	}
+}
+
+
+
+/********** Törzslista ********/
+
+
+
+.torzsexp{
+	margin:2em 0;
+	@include bp($s2){
+		width:48%;
+		display:inline-block;
+		vertical-align: top;
+		&:nth-of-type(2n+1){
+			margin-right:4%;
+		}
+
+	}
+	
+
+	@include bp($s3){
+		width:30.666%;
+		margin-right: 4%;
+		&:nth-of-type(2n+1){
+			//margin-right:0;
+		}
+		&:nth-of-type(3n){
+			margin-right:0;			
+		}
+	}
+}
+
+.torzs--title{
+	font-family: $sans-serif;
+	font-size: 22px;
+	line-height: 30px;
+	//font-weight: 400;
+	margin: 0 0 0.125em 0;
+	a{
+		//color:$gray-text;
+		&:hover, &:focus {
+			//color:$blue-header;
+		}
+	}
+}
+
+.torzs--summary{
+	font-size: 14px;
+	line-height: 24px;
+	p{
+		margin:0 0;
 	}
 }

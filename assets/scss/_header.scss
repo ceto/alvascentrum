@@ -1,6 +1,13 @@
 .torzs-header, .page-header{
 	background-color: $blue-header;
-	color:white;
+	color:#fff;
+
+	background-image: url('../img/home_bg2.jpg');
+	background-repeat: none;
+	background-position: center center;
+	background-attachment: fixed;
+	background-size: cover;
+
 	.col-holder {
 		position:relative;
 		z-index: 0;
@@ -17,27 +24,69 @@
 	h1 {
 		font-family: $sans-serif;
 		font-size: 30px;
-		line-height: 1.25;
-		margin:0 0 0.25em;
+		line-height: 1;
+		margin:0 0 0;
+		color:#fff;
 		@include bp($s2){
 			font-size: 50px;
 		}
-
+		
+		.single-post &, .search & {
+			margin-top:1em;
+		}
 	}
+
+
 	.discl{
 		font-size: 18px;
 		line-height: 28px;
-		color:$gray-text;
+		//color:$gray-text;
 		p {
-			margin:0;
+			margin:0.875em 0 0 0;
 		}
 		@include bp($s2){
-			font-size: 24px;
-			line-height: 36px;
+			font-size: 20px;
+			line-height: 30px;
 		}
 
 	}
 
+}
+
+.header-meta {
+	font-size:14px;
+	line-height: 1.25;
+	//color:$blue-extralight;
+	margin-bottom: 1em;
+	margin-top: 0.5em;
+	@include bp($s2){
+		font-size: 18px;
+		line-height: 1;
+	}
+	a {
+		color:$blue-light;
+	}
+
+	.byline{
+		display: inline-block;
+		font-style: italic;
+		a {
+			
+			font-family: $sans-serif;
+			font-style: normal;
+			text-transform: uppercase;
+			font-weight: 700;
+			text-transform: uppercase;	
+		}
+	}
+	.torzslink{
+		display: inline-block;
+		font-style: italic;
+	}
+	time{
+		display: inline-block;
+		font-style: italic;
+	}
 }
 
 .breadcrumbs {
@@ -47,15 +96,18 @@
 	padding:0 0 0 0;
 	height:1em;
 	overflow: hidden;
-
 	font-family: $sans-serif;
-	font-size: 16px;
+	font-size: 12px;
 	line-height: 1em;
 	font-weight: 900;
 	text-transform: uppercase;
-	color:#8fcddd !important;
+	color:#fff !important;
+
+	@include bp($s2){
+		font-size: 14px;
+	}
 	a {
-		color:#8fcddd !important;
+		color:$blue-light !important;
 		&:hover, &:focus {
 			text-decoration: none;
 			color:#fff !important;
@@ -64,30 +116,30 @@
 
 }
 
-.fejtorzslink {
-	display: block;
-	position: absolute;
-	z-index:-1;
-	left:0; 
-	bottom:0;
-	width:100%;
-	overflow: hidden;
-	text-align: left;
-	text-decoration: none;
-	font-family: $sans-serif;
-	font-size: 25px;
-	line-height: 1em;
-	padding-top: 0.15em;
-	height:1em;
-	font-weight: 900;
-	text-transform: uppercase;
-	word-break: keep-all;
-	color:#8fcddd !important;
+// .fejtorzslink {
+// 	display: block;
+// 	position: absolute;
+// 	z-index:-1;
+// 	left:0; 
+// 	bottom:0;
+// 	width:100%;
+// 	overflow: hidden;
+// 	text-align: left;
+// 	text-decoration: none;
+// 	font-family: $sans-serif;
+// 	font-size: 25px;
+// 	line-height: 1em;
+// 	padding-top: 0.15em;
+// 	height:1em;
+// 	font-weight: 900;
+// 	text-transform: uppercase;
+// 	word-break: keep-all;
+// 	color:#8fcddd !important;
 	
-	&:hover, &:focus {
-		text-decoration: none;
-		//opacity: 1;
-		color:#fff !important;
-	}
+// 	&:hover, &:focus {
+// 		text-decoration: none;
+// 		//opacity: 1;
+// 		color:#fff !important;
+// 	}
 
-}
+// }

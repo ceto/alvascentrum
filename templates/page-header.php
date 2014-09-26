@@ -13,8 +13,10 @@
     <?php endif; ?>
 
     <?php if ( is_single() ): ?>
-      <?php get_template_part('templates/entry-meta'); ?>
-      <?php get_template_part('templates/entry-rovatok'); ?>
+      <div class="header-meta">
+        <?php get_template_part('templates/entry-meta'); ?>
+        <?php //get_template_part('templates/entry-rovatok'); ?>
+      </div>
     <?php endif; ?>
 
     <?php if ( is_home() ): ?>
