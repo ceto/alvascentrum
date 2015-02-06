@@ -1,5 +1,4 @@
 <div class="page-header">
-  <div class="col-holder">
     <?php if ( function_exists('yoast_breadcrumb') ) {
         yoast_breadcrumb('<p class="breadcrumbs">','</p>');
     } ?>
@@ -24,8 +23,5 @@
         <p>Nulla vitae elit libero, a pharetra augue. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam id dolor id nibh ultricies vehicula ut id elit. </p>
       </div>
     <?php endif; ?>
-
-  
-  </div><!-- /.col-holder -->
 </div>
 

@@ -67,7 +67,8 @@ $(document).ready(function() {
   //jQuery(".fejtorzslink").fitText(0.94);
   $('.navbar-toggle').click(function(){
     $( this ).toggleClass('active');
-    $('.main-nav').toggleClass('show');
+    $('.banner').toggleClass('is_show');
+    $('body').toggleClass('nav_isactive');
   });
 });
 

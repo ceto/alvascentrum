@@ -1,75 +1,18 @@
-.col-holder {
-	@include clearfix();
-	max-width: $maximum;
-	margin: 0 auto;
-	padding-left: 12px;
-	padding-right: 12px;
 
-	@include bp($s1){
-		padding-left: 36px;
-		padding-right: 36px;
-
-	}
-	@include bp($s2){
-		padding-left: 48px;
-		padding-right: 48px;
-	}
-	@include bp($s3){
-		padding-left: 12px;
-		padding-right: 12px;
-	}
-
-
-}
 
 
 .main {
-	//padding-top: 100px;
-	//padding-bottom: 100px;
-	.page-template-default &  {
-		padding-top: 80px;
-		padding-bottom: 80px;
-	}
-
-	.page-template-template-torzslista-php & {
-		padding-top: 40px;
-		padding-bottom: 40px;
-
-	}
+	@include clearfix();
 }
 
 .main--hassidebar{
-
-	padding-top: 0;
-	padding-bottom: 0;
-	
-	@include bp($s2){
-		width:66.666%;
-		float:left;
-		padding-right:12px;
-
-	}
-
-	
-	@include bp($s3){
-		width:600px;
-		padding-right:24px;
-		border-right:1px solid lightgray;
-
-	}
 }
 
 
 
 .page {
 	.entry-content{
-		> * {
-			@include bp($s2){
-				margin-left:132px;
-				margin-right: 132px;
-			}
-		}
-
+		
 	}
 }
 

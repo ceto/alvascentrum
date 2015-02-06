@@ -2,23 +2,24 @@
 .sidebar{
 	font-family: $sans-serif;
 
-	@include bp($s2){
-		width:33.333%;
+	@include bp($s3){
+		width:25%;
 		float:left;
-		padding-left:12px;
+		padding-left:1em;
 
 	}
 
-	@include bp($s3){
-		width:336px;
-		padding-left:24px;
+	@include bp($s4){
+		padding-left: 2em;
+		// width:336px;
+		// padding-left:24px;
 
 	}
 
 	.widget{
 		margin:2em 0;
 		h3{
-			font-size: 16px;
+			font-size: 1.2em;
 		}
 	}
 }

@@ -1,6 +1,5 @@
 <?php while (have_posts()) : the_post(); ?>
   <div class="torzs-header">
-    <div class="col-holder">
       <?php if ( function_exists('yoast_breadcrumb') ) {
         yoast_breadcrumb('<p class="breadcrumbs">','</p>');
       } ?>
@@ -38,7 +37,6 @@
           <?php echo category_description(); ?>
         </div> 
       <?php endif; ?>
-    </div><!-- /.col-holder -->
   </div>
 <?php endwhile; ?>
 

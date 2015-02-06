@@ -1,49 +1,29 @@
+.entry-content {
+	@include clearfix();
+	padding-top:2em;
+	padding-bottom: 2em;
+	margin:0 auto;
+
+	@include bp($s3){
+		width:75%;
+	}
+}
 .main--hassidebar {
-	.hentry{
-		margin:50px 0;
-
-		header{
-			font-size: 14px;
-			line-height: 1.25;
-			.byline {
-				display: inline-block;
-				font-style: italic;
-				a {
-					font-family: $sans-serif;
-					font-style: normal;
-					font-weight: 700;
-					text-transform: uppercase;
-				}
-			}
-			.torzslink {
-				font-style: italic;
-				display: inline-block;
-			}
-			time {
-				display: inline-block;
-				font-style: italic;
-			}
-
-		}
-		.entry-title {
-			font-family: $sans-serif;
-			margin:0;
-			font-size: 22px;
-			line-height: 22px;
-			margin-bottom: 5px;
-			a{
-
-			}
+	.entry-content  {
+		@include bp($s3){
+			width:75%;
+			float:left;
+			padding-right:1em;
 		}
 
-		.entry-summary{
-			font-size: 14px;
-			line-height: 24px;
-			a{
-				display:none;
-			}
+	
+		@include bp($s4){
+			padding-right:2em;
+			border-right:1px solid lightgray;
+
 		}
 	}
+
 }
 
 
@@ -54,7 +34,7 @@
 
 .torzsexp{
 	margin:2em 0;
-	@include bp($s2){
+	@include bp($s3){
 		width:48%;
 		display:inline-block;
 		vertical-align: top;
@@ -65,7 +45,7 @@
 	}
 	
 
-	@include bp($s3){
+	@include bp($s4){
 		width:30.666%;
 		margin-right: 4%;
 		&:nth-of-type(2n+1){

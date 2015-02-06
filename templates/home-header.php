@@ -1,6 +1,4 @@
 <div class="home-header">
-  <div class="col-holder">
-    
     <div class="inner">
       <h1>Alváscentrum.hu</h1>
       <p class="intro">Választ adunk az alvászavarokkal kapcsolatos kérdéseire</p>
@@ -8,8 +6,6 @@
         Merüljön el a tartalomban...
       </button>
     </div><!-- /.inner -->
-  
-  </div><!-- /.col-holder -->
 </div>
 
 

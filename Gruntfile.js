@@ -36,20 +36,23 @@ module.exports = function(grunt) {
     },
     sass: {
       dev: {
+        files: {
+          'assets/css/main.css': ['assets/scss/main.scss']
+        },
         options: {
           outputStyle: 'nested',
           sourceMap: true
-        },
-        files: { 'assets/css/main.css': 'assets/scss/styles.scss' }
+        }
       },
       build: {
-        options: {
-          outputStyle: 'nested',
-          sourceMap: true
+        files: {
+          'assets/css/main.min.css': ['assets/scss/main.scss']
         },
-        files: { 'assets/css/main.min.css': 'assets/scss/styles.scss' }
+        options: {
+          outputStyle: 'compressed',
+          sourceMap: true
+        }
       }
-
     },
     concat: {
       options: {
@@ -68,26 +71,14 @@ module.exports = function(grunt) {
       }
     },
     autoprefixer: {
-      options: {
-        browsers: ['last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4', 'opera 12']
-      },
       dev: {
         options: {
-          map: {
-            prev: 'assets/css/'
-          }
+          map: true
         },
-        src: 'assets/css/main.css',
-        dest: 'assets/css/main.min.css'
+        src: 'assets/css/main.css'
       },
       build: {
-        options: {
-          map: {
-            prev: 'assets/css/'
-          }
-        },
-        src: 'assets/css/main.min.css',
-        dest: 'assets/css/main.min.css'
+        src: 'assets/css/main.min.css'
       }
     },
     modernizr: {
@@ -99,6 +90,9 @@ module.exports = function(grunt) {
             ['assets/js/scripts.min.js'],
             ['assets/css/main.min.css']
           ]
+        },
+        extra: {
+          shiv: false
         },
         uglify: true,
         parseFiles: true
@@ -120,13 +114,23 @@ module.exports = function(grunt) {
         }
       }
     },
+    notify: {
+      options: {
+        enabled: true,
+        max_jshint_notifications: 5, // maximum number of notifications from jshint output
+        title: "Project Name" // defaults to the name in package.json, or will use project directory's name
+      }
+    },
     watch: {
       sass: {
         files: [
           'assets/scss/*.scss',
           'assets/scss/**/*.scss'
         ],
-        tasks: ['sass:dev', 'autoprefixer:dev']
+        tasks: [
+          'sass:dev',
+          'autoprefixer:dev'
+        ]
       },
       js: {
         files: [
@@ -161,7 +165,8 @@ module.exports = function(grunt) {
     'jshint',
     'sass:dev',
     'autoprefixer:dev',
-    'concat'
+    'concat',
+    'notify'
   ]);
   grunt.registerTask('build', [
     'jshint',
@@ -169,6 +174,7 @@ module.exports = function(grunt) {
     'autoprefixer:build',
     'uglify',
     'modernizr',
-    'version'
+    'version',
+    'notify'
   ]);
 };

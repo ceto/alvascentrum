@@ -9,17 +9,42 @@
    Author: Gabor Szabo
    ========================================================================== */
 
+
+
 html,
 body {
   font-family: $serif;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.4;
   font-weight: normal;
-  text-rendering: optimizeLegibility;
+
   color: $gray-text;
-  background-color: #fff;
+  background-color: $blue-header;
   height: 100%;
+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  
+  @include bp($s1) {
+    font-size: 14px;  
+  }
+
+  @include bp($s2) {
+    font-size: 14px;  
+  }
+  @include bp($s3) {
+    font-size: 16px;  
+  }
+  @include bp($s4) {
+    font-size: 18px;  
+  }
+  
+  overflow-x: hidden;
 }
+
+
+
 
 a {
   color: $blue-header;
@@ -32,17 +57,17 @@ a:focus {
   //color: $gray-text;
 }
 
-p,span {
-  /* -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto; */
-  -moz-font-feature-settings: "liga=1, dlig=1, onum=1";
-  -moz-font-feature-settings: "liga", "dlig", "onum";
-  -ms-font-feature-settings: "liga", "dlig", "onum";
-  -webkit-font-feature-settings: "liga", "dlig", "onum";
-  -o-font-feature-settings: "liga", "dlig", "onum";
-  font-feature-settings: "liga", "dlig", "onum";
-}
+// p,span {
+//   /* -webkit-hyphens: auto;
+//   -moz-hyphens: auto;
+//   hyphens: auto; */
+//   -moz-font-feature-settings: "liga=1, dlig=1, onum=1";
+//   -moz-font-feature-settings: "liga", "dlig", "onum";
+//   -ms-font-feature-settings: "liga", "dlig", "onum";
+//   -webkit-font-feature-settings: "liga", "dlig", "onum";
+//   -o-font-feature-settings: "liga", "dlig", "onum";
+//   font-feature-settings: "liga", "dlig", "onum";
+// }
 
 h1,h2,h3,h4,h5,h6{
   font-family: $sans-serif;
