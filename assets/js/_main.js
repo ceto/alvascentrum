@@ -65,7 +65,7 @@ $(document).ready(UTIL.loadEvents);
 
 $(document).ready(function() {
   //jQuery(".fejtorzslink").fitText(0.94);
-  $('.navbar-toggle').click(function(){
+  $('.navbar-toggle, .home-start').click(function(){
     $( this ).toggleClass('active');
     $('.banner').toggleClass('is_show');
     $('body').toggleClass('nav_isactive');

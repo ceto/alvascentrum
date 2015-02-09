@@ -1,7 +1,8 @@
 
 .sidebar{
 	font-family: $sans-serif;
-
+	padding-top:2em;
+	padding-bottom: 2em;
 	@include bp($s3){
 		width:25%;
 		float:left;
@@ -24,3 +25,9 @@
 	}
 }
 
+
+.sidebar--inner {
+	font-size: 0.75em;
+	@include clearfix();
+
+}

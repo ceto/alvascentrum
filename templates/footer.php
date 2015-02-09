@@ -1,15 +1,19 @@
+<?php if (roots_display_sidebar()): ?>
 <aside class="site-bottom">
-	<div class="col-holder">
-		<div class="sidebar-footer">
+	<div class="wrapper wrapper--wide">
+		<div class="sidebar--footer">
     	<?php dynamic_sidebar('sidebar-fblocks'); ?>
     </div>
   </div>	
 </aside>
+<?php endif ?>
 
-<footer class="content-info" role="contentinfo">
-  <div class="col-holder">
-    <?php dynamic_sidebar('sidebar-footer'); ?>
+<footer class="sitefooter" role="contentinfo">
+  <div class="wrapper wrapper--wide">
+		<div class="sitefooter--inner">
+    	<?php dynamic_sidebar('sidebar-footer'); ?>
+    </div>
   </div>
 </footer>
 
-<?php wp_footer(); ?>
+

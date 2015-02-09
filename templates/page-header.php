@@ -1,4 +1,4 @@
-<div class="page-header">
+<div class="page--header">
     <?php if ( function_exists('yoast_breadcrumb') ) {
         yoast_breadcrumb('<p class="breadcrumbs">','</p>');
     } ?>
@@ -12,7 +12,7 @@
     <?php endif; ?>
 
     <?php if ( is_single() ): ?>
-      <div class="header-meta">
+      <div class="header__meta">
         <?php get_template_part('templates/entry-meta'); ?>
         <?php //get_template_part('templates/entry-rovatok'); ?>
       </div>

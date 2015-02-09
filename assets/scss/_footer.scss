@@ -5,40 +5,51 @@
 }
 
 
-.sidebar-footer{
+.sidebar--footer{
 	@include clearfix();
 	padding-top:2em;
 	padding-bottom: 2em;
 
 
 	@include bp($s2){
-		width: 66.666%;
-		padding-right: 12px;
 	}
 	@include bp($s3){
-		width: 600px;
-		padding-right: 24px;
-		border-right: 1px solid lightgray;
 	}
 
 	.widget {
+		font-size: 0.75em;
 		margin:1em 0;
-		@include bp($s2){
-			width: 46%;
+
+		@include bp($s1){
+			width: 50%;
 			float:left;
-			margin-right: 8%;
-			&:nth-child(2n){
-				margin-right: 0;
-			}
-			&:nth-child(2n+1){
-				clear:left;
-			}
+		}
+		@include bp($s3){
+			width: 33.333%;
+			float:left;
 		}
 		h3 {
 			margin:0;
-			font-size: 14px;
+
 		}
 	
 		
 	}
+
+
+	.menu {
+		.item--descr {
+			display: none;
+		}
+	}
+}
+
+.sitefooter {
+	padding:1em 0;
+	border-top: 1px solid lightgray;
+}
+.sitefooter--inner {
+	font-size: 0.75em;
+	font-family: $sans-serif;
+
 }

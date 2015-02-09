@@ -3,7 +3,12 @@
 Template Name: Home Page
 */
 ?>
-
-<?php while (have_posts()) : the_post(); ?>
-  <?php get_template_part('templates/content', get_post_format()); ?>
-<?php endwhile; ?>
+<div class="home-header">
+    <div class="inner">
+      <h1>Alváscentrum.hu</h1>
+      <p class="intro">Választ adunk az alvászavarokkal kapcsolatos kérdéseire</p>
+      <button type="button" class="home-start">
+        Merüljön el a tartalomban...
+      </button>
+    </div><!-- /.inner -->
+</div>

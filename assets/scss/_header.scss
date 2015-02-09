@@ -1,3 +1,26 @@
+.banner__searchblock {
+	padding:0 1.5em;
+}
+
+.search--form {
+	label {
+		display: none;
+
+	}
+	input[type="search"] {
+		width:100%;
+		padding: 0.333em 0.5em;
+		font-size: 0.875em;
+		font-family: $sans-serif;
+		border:none;
+		box-sizing:border-box;
+
+	}
+	.input-group-btn {
+		display: none;
+	}
+}
+
 .banner {
 	@include clearfix();
 	width:17em;
@@ -23,6 +46,7 @@
 	position: relative;
 	@include clearfix();
 	background-color: #fff;
+	min-height: 100vh;
 	
 	width: 100%;
 	max-width:$maximum;
@@ -59,7 +83,7 @@
 
 }
 
-.torzs-header, .page-header, .entry-header {
+.torzs--header, .page--header, .entry__header {
 	position: relative;
 	@include clearfix();
 	border-bottom: 1px solid lightgray;
@@ -84,8 +108,8 @@
 
 	.discl{
 		@include clearfix();
-		font-size: 1.5em;
-		line-height: 1.2;
+		font-size: 1.25em;
+
 		//color:$gray-text;
 		p {
 			margin:0.875em 0 3em 0;
@@ -98,7 +122,7 @@
 
 }
 
-.header-meta {
+.header__meta {
 	font-size:1em;
 	line-height: 1.25;
 	//color:$blue-extralight;
@@ -135,20 +159,21 @@
 }
 
 .breadcrumbs {
-	position: absolute;
-	bottom:1em;
-	margin:0;
+	
+	margin:4em 0 0;
 	padding:0 0 0 0;
-	height:1em;
-	overflow: hidden;
 	font-family: $sans-serif;
-	font-size: 0.75em;
+	font-size: 0.875em;
 	line-height: 1em;
 	font-weight: 900;
 	text-transform: uppercase;
 	
 	@include bp($s2){
-		font-size: 14px;
+		//font-size: 1em;
+		margin:0;
+		position: absolute;
+		left: 0;
+		top:2em;
 	}
 	a {
 		color:$blue-light !important;

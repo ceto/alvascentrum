@@ -1,5 +1,5 @@
 <?php while (have_posts()) : the_post(); ?>
-  <div class="torzs-header">
+  <div class="torzs--header">
       <?php if ( function_exists('yoast_breadcrumb') ) {
         yoast_breadcrumb('<p class="breadcrumbs">','</p>');
       } ?>
@@ -22,7 +22,7 @@
 
 
       <?php if ( (is_page() && ($post->post_parent)) ): ?>
-        <div class="header-meta">
+        <div class="header__meta">
           <?php get_template_part('templates/entry-meta'); ?>
           <?php //get_template_part('templates/entry-rovatok'); ?>
         </div>

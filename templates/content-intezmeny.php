@@ -1,11 +1,11 @@
 <article <?php post_class(); ?>>
-  <header>
+  <header class="entry__header">
 		<a class="fejtorzslink" href="<?php echo get_permalink(66); ?>" >
 			<?php _e('Intézmények','roots') ?>
 		</a>
-    <h1 class="entry-title"><?php the_title(); ?></h1>
+    <h1 class="entry__title"><?php the_title(); ?></h1>
   </header>
-  <div class="entry-content">
+  <div class="entry__content">
     <?php the_content(); ?>
   </div>
   <footer>

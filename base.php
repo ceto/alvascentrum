@@ -13,9 +13,7 @@
   ?>
   <div class="document" role="document">
     <a href="#" class="navbar-toggle">Menü</a>
-    <?php if (is_page_template('template-home.php')): ?>
-      <?php get_template_part('templates/home','header'); ?>
-    <?php else : ?>
+
 
       <?php if ( (is_page_template('template-torzslista.php')) || (is_page_template('template-intezmenylista.php')) ) : ?>
         <?php get_template_part('templates/torzs','header'); ?>
@@ -23,17 +21,17 @@
       
 
 
-    <?php endif; ?>
 
 
 
       <main class="main <?php echo roots_display_sidebar()?'main--hassidebar':''; ?>" role="main">
-        <?php include roots_template_path(); ?>
+          <?php include roots_template_path(); ?>
       </main><!-- /.main -->
-
-
 
     <?php get_template_part('templates/footer'); ?>
   </div><!-- /.document -->
+
+  <?php wp_footer(); ?>
+
 </body>
 </html>

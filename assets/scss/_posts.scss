@@ -1,0 +1,19 @@
+.archiveitem {
+	@include clearfix();
+	max-width: 37em;
+	margin:2em auto;
+
+
+}
+
+.archiveitem__header {
+	//font-size: 0.875em;
+}
+
+.archiveitem__title {
+	margin: 0;
+	line-height: 1.2;
+}
+.archiveitem__summary {
+	//font-size: 0.875em;
+}
