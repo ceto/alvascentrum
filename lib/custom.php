@@ -82,20 +82,92 @@ function create_torzs_csoport() {
 
 
 
+/*************** Metaboxes for Intezmen Custom Post Type *************/
 
-
-
-
-add_action( 'init', 'cmb_initialize_cmb_meta_boxes', 9999 );
 /**
- * Initialize the metabox class.
+ * Get the bootstrap! If using the plugin from wordpress.org, REMOVE THIS!
  */
-function cmb_initialize_cmb_meta_boxes() {
 
-  if ( ! class_exists( 'cmb_Meta_Box' ) )
-    require_once 'CMB/init.php';
-
+if ( file_exists( dirname( __FILE__ ) . '/cmb2/init.php' ) ) {
+  require_once dirname( __FILE__ ) . '/cmb2/init.php';
+} elseif ( file_exists( dirname( __FILE__ ) . '/CMB2/init.php' ) ) {
+  require_once dirname( __FILE__ ) . '/CMB2/init.php';
 }
+
+
+
+add_filter( 'cmb2_meta_boxes', 'ac_intezmeny_metaboxes' );
+/**
+ * Define the metabox and field configurations.
+ *
+ * @param  array $meta_boxes
+ * @return array
+ */
+function ac_intezmeny_metaboxes( array $meta_boxes ) {
+
+    // Start with an underscore to hide fields from custom fields list
+    $prefix = '_addr_';
+
+    /**
+     * Sample metabox to demonstrate each field type included
+     */
+    $meta_boxes['address_metabox'] = array(
+        'id'            => 'address_metabox',
+        'title'         => __( 'Cím, elérhetőség, nyitvatartás', 'cmb2' ),
+        'object_types'  => array( 'intezmeny', ), // Post type
+        'context'       => 'normal',
+        'priority'      => 'high',
+        'show_names'    => true, // Show field names on the left
+        // 'cmb_styles' => false, // false to disable the CMB stylesheet
+        // 'closed'     => true, // Keep the metabox closed by default
+        'fields'        => array(
+            array(
+                'name'       => __( 'Teljes cím', 'cmb2' ),
+                'id'         => $prefix . 'fulladdr',
+                'type'       => 'wysiwyg',
+                'options'    => array (
+                  'media_buttons' => false,
+                  'textarea_rows' => get_option('default_post_edit_rows', 5),
+                  'teeny' => true, 
+                ),
+            ),
+            array(
+                'name' => __( 'Weboldal URL', 'cmb2' ),
+                'id'   => $prefix . 'url',
+                'type' => 'text_url',
+            ),
+            array(
+                'name' => __( 'Kontakt email', 'cmb2' ),
+                'id'   => $prefix . 'email',
+                'type' => 'text_email',
+                // 'repeatable' => true,
+            ),
+            array(
+                'name' => __( 'Telefon', 'cmb2' ),
+                'id'   => $prefix . 'telefon',
+                'type' => 'text',
+                // 'repeatable' => true,
+            ),
+            array(
+                'name'       => __( 'Nyitvatartás', 'cmb2' ),
+                'id'         => $prefix . 'nyitva',
+                'type'       => 'wysiwyg',
+                'options'    => array (
+                  'media_buttons' => false,
+                  'textarea_rows' => get_option('default_post_edit_rows', 5),
+                  'teeny' => true, 
+                ),
+            ),
+        ),
+    );
+
+    // Add other metaboxes as needed
+
+    return $meta_boxes;
+}
+
+
+
 
 
 

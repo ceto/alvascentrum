@@ -17,6 +17,11 @@
           <p><?php echo get_the_excerpt(); ?></p>
         </div>
     </header>
+    <aside class="sidebar" role="complementary">
+      <div class="sidebar--inner"> 
+       <?php include roots_sidebar_path(); ?>
+      </div>
+    </aside><!-- /.sidebar -->
     <div class="entry__content">
       <?php the_content(); ?>
     </div>

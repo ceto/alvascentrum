@@ -6,12 +6,11 @@
 	@include bp($s3){
 		width:25%;
 		float:left;
-		padding-left:1em;
-
+		padding-right:1em;
 	}
 
 	@include bp($s4){
-		padding-left: 2em;
+		padding-right: 2em;
 		// width:336px;
 		// padding-left:24px;
 

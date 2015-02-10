@@ -12,14 +12,14 @@
 	.entry__content  {
 		@include bp($s3){
 			width:75%;
-			float:left;
-			padding-right:1em;
+			float:right;
+			padding-left:1em;
 		}
 
 	
 		@include bp($s4){
-			padding-right:2em;
-			border-right:1px solid lightgray;
+			padding-left:2em;
+			border-left:1px solid lightgray;
 
 		}
 	}

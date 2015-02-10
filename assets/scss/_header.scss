@@ -99,7 +99,7 @@
 		line-height: 1;
 		margin:2em 0 0;
 		@include bp($s2){
-			font-size: 4em;
+			font-size: 3.5em;
 			margin-top: 1.5em;
 		}
 
@@ -181,7 +181,9 @@
 			text-decoration: none;
 		}
 	}
-
+	.breadcrumb_last {
+		display: none;
+	}
 }
 
 // .fejtorzslink {

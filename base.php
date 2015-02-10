@@ -24,7 +24,7 @@
 
 
 
-      <main class="main <?php echo roots_display_sidebar()?'main--hassidebar':''; ?>" role="main">
+      <main class="main <?php echo (is_singular())?'main--hassidebar':''; ?>" role="main">
           <?php include roots_template_path(); ?>
       </main><!-- /.main -->
 
