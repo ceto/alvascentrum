@@ -163,6 +163,63 @@ function ac_intezmeny_metaboxes( array $meta_boxes ) {
 
     // Add other metaboxes as needed
 
+
+    $prefix = '_data_';
+
+    /**
+     * Sample metabox to demonstrate each field type included
+     */
+    $meta_boxes['data_metabox'] = array(
+        'id'            => 'data_metabox',
+        'title'         => __( 'További részletek', 'cmb2' ),
+        'object_types'  => array( 'intezmeny', ), // Post type
+        'context'       => 'normal',
+        'priority'      => 'high',
+        'show_names'    => true, // Show field names on the left
+        // 'cmb_styles' => false, // false to disable the CMB stylesheet
+        // 'closed'     => true, // Keep the metabox closed by default
+        'fields'        => array(
+          array(
+              'id'          => $prefix . 'accordion',
+              'type'        => 'group',
+              'description' => __( 'Create an accordion with collapsible elements', 'cmb' ),
+              'options'     => array(
+                  'group_title'   => __( 'Collapsible element {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
+                  'add_button'    => __( 'Add another collapsible element', 'cmb' ),
+                  'remove_button' => __( 'Remove element', 'cmb' ),
+                  'sortable'      => true, // beta
+              ),
+              // Fields array works the same, except id's only need to be unique for this group. Prefix is not needed.
+              'fields'      => array(
+                  array(
+                      'name' => 'Collapsible Title',
+                      'id'   => 'title',
+                      'type' => 'text',
+                      // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+                  ),
+                  array(
+                      'name' => 'Collapsible content',
+                      'description' => 'Add any content you want',
+                      'id'   => 'content',
+                      'type' => 'wysiwyg',
+                      'options'    => array (
+                        'media_buttons' => false,
+                        'textarea_rows' => get_option('default_post_edit_rows', 5),
+                        'teeny' => true, 
+                      ),
+                  ),
+
+              ),
+          ), /* end of group def*/
+
+
+
+        ),
+    );
+
+
+
+
     return $meta_boxes;
 }
 
