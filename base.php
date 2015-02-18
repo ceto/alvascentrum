@@ -14,17 +14,12 @@
   <div class="document" role="document">
     <a href="#" class="navbar-toggle">Menü</a>
 
-
       <?php if ( (is_page_template('template-torzslista.php')) || (is_page_template('template-intezmenylista.php')) ) : ?>
         <?php get_template_part('templates/torzs','header'); ?>
       <?php endif; ?>
-      
 
 
-
-
-
-      <main class="main <?php echo (is_singular())?'main--hassidebar':''; ?>" role="main">
+      <main class="main <?php echo ( is_singular() || is_archive() || is_home() || is_search() )?'main--hassidebar':''; ?>" role="main">
           <?php include roots_template_path(); ?>
       </main><!-- /.main -->
 

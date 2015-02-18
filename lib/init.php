@@ -10,7 +10,11 @@ function roots_setup() {
   // Register wp_nav_menu() menus
   // http://codex.wordpress.org/Function_Reference/register_nav_menus
   register_nav_menus(array(
-    'primary_navigation' => __('Primary Navigation', 'roots')
+    'primary_navigation' => __('Primary Navigation', 'h2'),
+    'intezmeny_navigation' => __('Intézmény Navigation', 'h2'),
+    'alvaszavar_navigation' => __('Alvászavar Navigation', 'h2'),
+    'gyogyitas_navigation' => __('Gyógyítás és terápia Navigation', 'h2'),
+    'alvas_navigation' => __('Alvás Navigation', 'h2'),
   ));
 
   // Add post thumbnails

@@ -3,7 +3,7 @@
     	<?php if ( function_exists('yoast_breadcrumb') ) {
           yoast_breadcrumb('<p class="breadcrumbs">','</p>');
       } ?>
-      <h1>
+      <h1 class="page__title">
         <?php echo roots_title(); ?>
       </h1>
       
@@ -17,14 +17,42 @@
           <p><?php echo get_the_excerpt(); ?></p>
         </div>
     </header>
-    <aside class="sidebar" role="complementary">
-      <div class="sidebar--inner"> 
-       <?php include roots_sidebar_path(); ?>
-      </div>
-    </aside><!-- /.sidebar -->
     <div class="entry__content">
       <?php the_content(); ?>
     </div>
+    <aside class="sidebar" role="complementary">
+      <div class="sidebar--inner">
+        <?php 
+          $parent_id = wp_get_post_parent_id( $post_ID );
+            switch ($parent_id) {
+              case 54:
+                $submenu='alvaszavar_navigation';
+                break;
+
+              case 56:
+                $submenu='gyogyitas_navigation';
+                break;
+
+              case 58:
+                $submenu='alvas_navigation';
+                break;
+              
+              default:
+                $submenu='primary_navigation';
+                break;
+            }
+        ?>
+        <nav class="widget widget--sidebarnav" role="navigation">
+          <h3 class="widget__title"><?php echo get_the_title( $parent_id ); ?></h3>
+          <?php
+            if (has_nav_menu($submenu)) :
+              wp_nav_menu(array('theme_location' => $submenu, 'menu_class' => 'subnav'));
+            endif;
+          ?>
+        </nav> 
+       <?php include roots_sidebar_path(); ?>
+      </div>
+    </aside><!-- /.sidebar -->
     <footer>
       <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
     </footer>

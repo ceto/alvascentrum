@@ -1,16 +1,20 @@
-.entry__content {
+.entry__content, .archiveblock {
 	@include clearfix();
-	padding-top:2em;
-	padding-bottom: 2em;
+	//padding-top:2em;
+	//padding-bottom: 2em;
 	margin:0 auto;
 
-	@include bp($s3){
+	@include bp($s2){
 		width:75%;
+	}
+
+	@include bp($s3){
+		font-size: 0.875em;
 	}
 }
 .main--hassidebar {
-	.entry__content  {
-		@include bp($s3){
+	.entry__content, .archiveblock  {
+		@include bp($s2){
 			width:75%;
 			float:right;
 			padding-left:1em;
@@ -19,8 +23,6 @@
 	
 		@include bp($s4){
 			padding-left:2em;
-			border-left:1px solid lightgray;
-
 		}
 	}
 
@@ -34,7 +36,7 @@
 
 .torzsexp{
 	margin:2em 0;
-	@include bp($s3){
+	@include bp($s2){
 		width:48%;
 		display:inline-block;
 		vertical-align: top;

@@ -3,7 +3,7 @@
     	<?php if ( function_exists('yoast_breadcrumb') ) {
           yoast_breadcrumb('<p class="breadcrumbs">','</p>');
       } ?>
-      <h1>
+      <h1 class="page__title">
         <?php echo roots_title(); ?>
       </h1>
       
@@ -22,7 +22,7 @@
     	<footer class="entry-footer">
       	<?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
     	</footer>
-    	<?php comments_template('/templates/comments.php'); ?>
+    	<?php //comments_template('/templates/comments.php'); ?>
     </div>
 
 

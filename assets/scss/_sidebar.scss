@@ -1,9 +1,9 @@
 
 .sidebar{
 	font-family: $sans-serif;
-	padding-top:2em;
-	padding-bottom: 2em;
-	@include bp($s3){
+	//padding-top:2em;
+	//padding-bottom: 2em;
+	@include bp($s2){
 		width:25%;
 		float:left;
 		padding-right:1em;
@@ -17,11 +17,15 @@
 	}
 
 	.widget{
-		margin:2em 0;
+		margin:0 0 2em 0;
 		h3{
 			font-size: 1.2em;
 		}
 	}
+}
+
+.sidebar--lower {
+	border-top: 1px solid $blue-extralight;
 }
 
 

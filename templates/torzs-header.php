@@ -1,5 +1,5 @@
 <?php while (have_posts()) : the_post(); ?>
-  <div class="torzs--header">
+  <div class="torzs__header">
       <?php if ( function_exists('yoast_breadcrumb') ) {
         yoast_breadcrumb('<p class="breadcrumbs">','</p>');
       } ?>
@@ -16,7 +16,7 @@
       <?php endif; */?>
 
 
-      <h1>
+      <h1 class="page__title">
         <?php echo roots_title(); ?>
       </h1>
 
