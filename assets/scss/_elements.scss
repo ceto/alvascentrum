@@ -35,8 +35,8 @@
 
 
 .torzsexp{
-	margin:2em 0;
-	@include bp($s2){
+	margin:0 0 4em; 
+	@include bp($s4){
 		width:48%;
 		display:inline-block;
 		vertical-align: top;
@@ -47,7 +47,7 @@
 	}
 	
 
-	@include bp($s4){
+	@include bp($s5){
 		width:30.666%;
 		margin-right: 4%;
 		&:nth-of-type(2n+1){

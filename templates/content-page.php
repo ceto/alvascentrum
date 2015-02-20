@@ -42,8 +42,12 @@
                 break;
             }
         ?>
+        
         <nav class="widget widget--sidebarnav" role="navigation">
-          <h3 class="widget__title"><?php echo get_the_title( $parent_id ); ?></h3>
+          <figure class="navill">
+            <?php echo get_the_post_thumbnail( $parent_id, 'tiny916'); ?> 
+          </figure>
+          <h3 class="subnav__title"><?php echo get_the_title( $parent_id ); ?></h3>
           <?php
             if (has_nav_menu($submenu)) :
               wp_nav_menu(array('theme_location' => $submenu, 'menu_class' => 'subnav'));

@@ -6,7 +6,7 @@
 	position:absolute;
 	display: inline-block;;
 	z-index:10;
-	left:0;
+	right:1em;
 	top:1em;
 	background-color: $blue-header;
 	color: lightgray;
@@ -121,8 +121,35 @@
 }
 
 /**** SideBar nav ****/
+
+.navill {
+	margin:0 -1em;
+	padding:0;
+	width:50%;
+	float:left;
+	@include bp($s2){
+		width:auto;
+		float:none;
+	}
+}
+.subnav__title {
+	width:50%;
+	float:left;
+	@include bp($s2){
+		width:auto;
+		float: none;
+	}
+
+}
 .subnav{
 	
+	width:50%;
+	float:left;
+	@include bp($s2){
+		width:auto;
+		float: none;
+	}
+
 	padding:0;
 	margin:0 0 1em 0;
 	//border-top: 1px dotted lightgray;

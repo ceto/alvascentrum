@@ -24,19 +24,20 @@
 .banner {
 	@include clearfix();
 	width:17em;
-	float:left;
+	float:right;
 
 	transition: margin .4s ease;
 	
-	margin-left: -100%;
+	margin-right: -100%;
 	.nav_isactive & {
-		margin-left: 0;
+		margin-right: 0;
 	}
 
 	@include bp($s3) {
-		margin-left: 0;
+		float:left;
+		margin-right: 0;
 		.nav_isactive & {
-			margin-left: 0;
+			margin-right: 0;
 		}
 	}
 }
@@ -54,31 +55,32 @@
 	padding-left: 1em;
 	padding-right: 1em;
 	
-	float:left;
+	float:right;
 	
-	margin-right:0;
+	//border:0.5em solid $blue-header;
+	
+	margin-left:0;
 	transition: margin .4s ease;
 	.nav_isactive & {
-		margin-right: -100%;
+		margin-left: -100%;
 	}
 
-	@include bp($s1){
+	@include bp($s1) {
 		padding-left: 2em;
 		padding-right: 2em;
 
 	}
-	@include bp($s3){
-		margin-right: 0;
+	@include bp($s3) {
+		float:left;
+		margin-left: 0;
 		.nav_isactive & {
-			margin-right: 0;
+			margin-left: 0;
 		}
 		width: calc(100% - 17em);
 		padding-left: 2em;
 		padding-right: 2em;
 	}
-	@include bp($s3){
 
-	}
 
 
 }

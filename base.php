@@ -19,7 +19,7 @@
       <?php endif; ?>
 
 
-      <main class="main <?php echo ( is_singular() || is_archive() || is_home() || is_search() )?'main--hassidebar':''; ?>" role="main">
+      <main class="main <?php echo ( !is_front_page() )?'main--hassidebar':''; ?>" role="main">
           <?php include roots_template_path(); ?>
       </main><!-- /.main -->
 

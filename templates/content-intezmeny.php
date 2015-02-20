@@ -25,6 +25,7 @@
     </div>
   </aside><!-- /.sidebar -->
   <div class="entry__content">
+    <?php the_content(); ?>
 
     <?php if ($accordion = get_post_meta( get_the_ID(), '_data_accordion', true )) : ?>
       
@@ -50,7 +51,7 @@
       </section>
     <?php endif; ?>
 
-    <?php the_content(); ?>
+
   </div>
 
 
@@ -58,7 +59,8 @@
   <aside class="sidebar sidebar--lower" role="complementary">
     <div class="sidebar--inner">
       <nav class="widget widget--sidebarnav" role="navigation">
-        <h3 class="widget__title">Intézmények</h3>
+        
+        <h3 class="subnav__title">Intézmények</h3>
         <?php
           if (has_nav_menu('intezmeny_navigation')) :
             wp_nav_menu(array('theme_location' => 'intezmeny_navigation', 'menu_class' => 'subnav'));
