@@ -15,11 +15,11 @@ html,
 body {
   font-family: $serif;
   font-size: 14px;
-  line-height: 1.4;
+  line-height: 1.6;
   font-weight: normal;
 
   color: $gray-text;
-  background-color: $blue-header;
+  background-color: $egg;
   height: 100%;
 
   -moz-osx-font-smoothing: grayscale;
@@ -81,10 +81,10 @@ html[data-useragent*='Chrome'][data-platform*='Mac'] p {
   font-feature-settings: normal;
 }
 
-:target:not(#comments):not(.global-nav) {
-  -webkit-animation: target-fade 2s 1;
-  -moz-animation: target-fade 2s 1;
-}
+// :target:not(#comments):not(.global-nav) {
+//   -webkit-animation: target-fade 2s 1;
+//   -moz-animation: target-fade 2s 1;
+// }
 
 @-webkit-keyframes target-fade {
   0% { background-color: rgba(255,248,135,1); outline: 6px solid rgba(255,248,135,1);}
@@ -104,3 +104,6 @@ img {
 }
 
 
+#map-canvas img {
+  max-width: inherit;
+}

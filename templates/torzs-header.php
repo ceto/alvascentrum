@@ -5,17 +5,6 @@
       } ?>
 
 
-      <?php /*if (is_page() && ($post->post_parent)): ?>
-        <a class="fejtorzslink" href="<?php echo get_permalink( $post->post_parent ); ?>" >
-          <?php echo str_replace(' ','&nbsp;',get_the_title( $post->post_parent )); ?>
-        </a>
-      <?php else : ?>
-        <a class="fejtorzslink" href="<?php echo esc_url(home_url('/')); ?>" >
-          Alváscentrum.hu
-        </a>
-      <?php endif; */?>
-
-
       <h1 class="page__title">
         <?php echo roots_title(); ?>
       </h1>

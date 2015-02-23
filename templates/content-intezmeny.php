@@ -10,16 +10,23 @@
   </header>
   <aside class="sidebar" role="complementary">
     <div class="sidebar--inner">
-      <div class="widget widget--location">
+      <div class="widget widget--location widget--intezmeny">
         <h3 class="widget__title">Hol található</h3>
-        <?php echo get_post_meta( $post->ID, '_addr_fulladdr', true ); ?>
+        <p class="fulladdr">
+          <?php echo get_post_meta( $post->ID, '_addr_fulladdr', true ); ?>
+        </p>
+        <?php if (get_post_meta( $post->ID, '_addr_addrdiscl', true )): ?>
+          <p class="addrdsicl"><?php echo get_post_meta( $post->ID, '_addr_addrdiscl', true ); ?></p>
+        <?php endif ?>
       </div>
-      <div class="widget widget--location">
-        <h3 class="widget__title">Bejelentkezés</h3>
-        <?php echo get_post_meta( $post->ID, '_addr_telefon', true ); ?>
+      <div class="widget widget--contact widget--intezmeny">
+        <h3 class="widget__title">Kontakt</h3>
+        <p class="addrtel">Telefon: <?php echo get_post_meta( $post->ID, '_addr_telefon', true ); ?></p>
+        <p class="addrmail">Email: <?php echo get_post_meta( $post->ID, '_addr_email', true ); ?></p>
+        <p class="addrurl">Web: <?php echo get_post_meta( $post->ID, '_addr_url', true ); ?></p>
       </div>
-      <div class="widget widget--location">
-        <h3 class="widget__title">Nyitvatartás</h3>
+      <div class="widget widget--open widget--intezmeny">
+        <h3 class="widget__title">Rendelési idő</h3>
         <?php echo get_post_meta( $post->ID, '_addr_nyitva', true ); ?>
       </div>
     </div>
@@ -42,7 +49,7 @@
               </div>
               <div class="collapse panel-collapse" id="collapse-<?php echo $key; ?>" role="tabpanel" aria-labelledby="heading-<?php echo $key; ?>">
                 <div class="panel-body">
-                  <?php echo $collapsible['content']; ?>
+                  <?php echo wpautop($collapsible['content']); ?>
                 </div>
               </div>
             </div>
@@ -50,7 +57,11 @@
         </div>
       </section>
     <?php endif; ?>
-
+    
+    <section class="mapblock">
+      <h2>Térkép</h2>
+      <div id="map-canvas"></div>
+    </section>
 
   </div>
 
@@ -75,3 +86,49 @@
   </footer>
   <?php // comments_template('/templates/comments.php'); ?>
 </article>
+
+
+
+
+<!-- Google MAps -->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script>
+
+  function initialize() {
+    var mapOptions = {
+      zoom: 15,
+      zoomControl: false,
+      zoomControlOptions: {style: google.maps.ZoomControlStyle.DEFAULT,},
+      disableDoubleClickZoom: true,
+      mapTypeControl: true,
+      mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,},
+      scaleControl: true,
+      scrollwheel: true,
+      streetViewControl: true,
+      draggable: true,
+      overviewMapControl: true,
+      overviewMapControlOptions: {opened: false,},
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      styles: [{featureType: "landscape",stylers: [{saturation: -100}, {lightness: 65}, {visibility: "on"}]}, {featureType: "poi",stylers: [{saturation: -100}, {lightness: 51}, {visibility: "simplified"}]}, {featureType: "road.highway",stylers: [{saturation: -100}, {visibility: "simplified"}]}, {featureType: "road.arterial",stylers: [{saturation: -100}, {lightness: 30}, {visibility: "on"}]}, {featureType: "road.local",stylers: [{saturation: -100}, {lightness: 40}, {visibility: "on"}]}, {featureType: "transit",stylers: [{saturation: -100}, {visibility: "simplified"}]}, {featureType: "administrative.province",stylers: [{visibility: "off"}]/** /},{featureType: "administrative.locality",stylers: [{ visibility: "off" }]},{featureType: "administrative.neighborhood",stylers: [{ visibility: "on" }]/**/}, {featureType: "water",elementType: "labels",stylers: [{visibility: "on"}, {lightness: -25}, {saturation: -100}]}, {featureType: "water",elementType: "geometry",stylers: [{hue: "#ffff00"}, {lightness: -25}, {saturation: -97}]}],
+    }
+    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    var image = '<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo_blue.png';
+
+    geocoder = new google.maps.Geocoder();
+    geocoder.geocode( { 'address': '<?php echo get_post_meta( $post->ID, '_addr_fulladdr', true ); ?>'}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location,
+            //icon: image
+        });
+      } else {
+        console.log('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+  }
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>

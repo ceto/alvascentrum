@@ -1,27 +1,26 @@
 
 .home {
-	.document {
-		padding:0;
-	
-		.sitefooter {
-			display: none;
-		}
+	.sitefooter {
+		display: none;
 	}
-
 }
-.home-header{
+.home__header{
 	@include clearfix();
-	min-height: 100vh;
-	padding:4em 2em;
+	//min-height: 50vh;
+	padding:5em 1em 5em;
 	text-align: center;
 	background-color: $blue-header;
 	color:#fff;
 	position: relative;
-	background-image: url('../img/home_bg2.jpg');
+	background-image: url('../img/hero_home.jpg');
 	background-repeat: no-repeat;
 	background-position: center center;
-	background-attachment: fixed;
+	//background-attachment: fixed;
 	background-size: cover;
+	margin:0 -1em;
+	@include bp($s1) {
+		margin:0 -2em;
+	}
 
 
 
@@ -31,30 +30,95 @@
 	}
 
 	.intro{
-		font-size:26px;
+		font-size:1.5em;
+		max-width: 17em;
+		margin:0 auto;
+		text-shadow: 0 0 3px rgba($blue-header,0.25);
 		@include bp($s2){
-			font-size: 48px;
+			font-size: 2.5em;
 		}
 	}
 
-	.home-start{
+	.home__start{
+		display: inline-block;
 		font-family: $serif;
-		height:auto;
-		background-color: transparent;
-		font-size: 1.5em;
-		line-height: 1em;
+		background-color: $blue-header;
+		font-size: 1.125em;
+		line-height: 1;
 		font-style: italic;
 		padding:0.75em 1.5em;
-		margin-top: 1em;
+		margin-top: 1.5em;
 		color:#fff;
-		border-color:#fff;
 		border-radius: 0;
-		border:2px solid #fff;
+		border:2px solid $blue-header;
 		&:hover, &:focus {
-			background-color: #fff;
-			color:$blue-header;
-			border-color:$egg;
+			background-color: transparent;
+			color:#fff;
+			border-color: #fff;
+			text-decoration: none;
+			
+		}
+	}
+}
+
+.home__sections {
+	padding-top: 1em;
+}
+
+.home__section {
+	@include clearfix();
+	margin:4em auto;
+	max-width: 54em;
+}
+
+.home__section__ill {
+	margin:0 auto;
+	max-width: 18em;
+	text-align: center;
+	@include bp($s2) {
+		width:33.333%;
+		float:left;
+	
+		.home__section:nth-child(2n) &{
+			float:right;
 		}
 	}
 
+	img {
+		max-width: 75%;
+	}
 }
+
+.home__section__textcontainer {
+	max-width: 40em;
+	margin:0 auto;
+	@include bp($s2) {
+		width:66.666%;
+		float:left;
+		.home__section:nth-child(2n) &{
+			float:right;
+		}
+
+	}
+	@include bp($s3) {
+		font-size: 0.85em;
+	}
+
+	.btn {
+		margin-top: .5em;
+	}
+}
+
+.home__section__title {
+	//text-transform: uppercase;
+	font-size: 2em;
+	line-height: 1.2;
+	color:$blue-header;
+	margin:0 0 0.5em;
+
+}
+
+.home__section__content {
+
+}
+

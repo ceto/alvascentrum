@@ -1,9 +1,44 @@
 .entry__content {
-	ul {
+  li {
+    margin: .5em 0;
+  }
+}
 
-	}
 
-	li {
-		margin:0.5em 0;
-	}
+
+blockquote {
+  background-color: $blue-extralight;
+  margin:1em 0;
+  padding:1em 2em;
+  @include clearfix();
+
+  p{
+    margin:0.5em 0;
+    font-size: 1.666em;
+    font-family: $serif;
+    font-style: italic;
+  }
+}
+
+.btn {
+  font-size: 1.125em;
+  line-height: 1;
+  font-style: italic;
+  font-weight: 400;
+
+  display: inline-block;
+
+  padding: .75em 1em;
+
+  text-decoration: none;
+  border:2px solid $blue-header;
+
+  color: #fff;
+  background-color: $blue-header;
+  &:hover,&:focus {
+  	text-decoration: none;
+  	background-color: transparent;
+  	color: $blue-header;
+
+  }
 }

@@ -122,10 +122,16 @@ function ac_intezmeny_metaboxes( array $meta_boxes ) {
         // 'closed'     => true, // Keep the metabox closed by default
         'fields'        => array(
             array(
-                'name'       => __( 'Teljes cím', 'cmb2' ),
+                'name'       => __( 'Pontos cím', 'cmb2' ),
                 'id'         => $prefix . 'fulladdr',
+                'type'       => 'text',
+            ),
+            array(
+                'name'       => __( 'Megközelítés, segítség', 'cmb2' ),
+                'id'         => $prefix . 'addrdiscl',
                 'type'       => 'wysiwyg',
                 'options'    => array (
+                  'wpautop' => true,
                   'media_buttons' => false,
                   'textarea_rows' => get_option('default_post_edit_rows', 5),
                   'teeny' => true, 
@@ -149,10 +155,11 @@ function ac_intezmeny_metaboxes( array $meta_boxes ) {
                 // 'repeatable' => true,
             ),
             array(
-                'name'       => __( 'Nyitvatartás', 'cmb2' ),
+                'name'       => __( 'Rendelési idő', 'cmb2' ),
                 'id'         => $prefix . 'nyitva',
                 'type'       => 'wysiwyg',
                 'options'    => array (
+                  'wpautop' => true,
                   'media_buttons' => false,
                   'textarea_rows' => get_option('default_post_edit_rows', 5),
                   'teeny' => true, 
@@ -161,14 +168,9 @@ function ac_intezmeny_metaboxes( array $meta_boxes ) {
         ),
     );
 
-    // Add other metaboxes as needed
-
+    // Add other accordion metaboxes to Intezmeny Post Type
 
     $prefix = '_data_';
-
-    /**
-     * Sample metabox to demonstrate each field type included
-     */
     $meta_boxes['data_metabox'] = array(
         'id'            => 'data_metabox',
         'title'         => __( 'További részletek', 'cmb2' ),
@@ -203,6 +205,7 @@ function ac_intezmeny_metaboxes( array $meta_boxes ) {
                       'id'   => 'content',
                       'type' => 'wysiwyg',
                       'options'    => array (
+                        'wpautop' => true,
                         'media_buttons' => false,
                         'textarea_rows' => get_option('default_post_edit_rows', 5),
                         //'teeny' => true, 
@@ -216,6 +219,68 @@ function ac_intezmeny_metaboxes( array $meta_boxes ) {
 
         ),
     );
+
+
+
+    // Add some box to Home Page
+
+    $prefix = '_homedata_';
+    $meta_boxes['homedata_metabox'] = array(
+        'id'            => 'homedata_metabox',
+        'title'         => __( 'Home sections', 'cmb2' ),
+        'object_types'  => array( 'page', ), // Post type
+        'show_on'      => array( 'key' => 'page-template', 'value' => 'template-home.php' ),
+        'context'       => 'normal',
+        'priority'      => 'high',
+        'show_names'    => true, // Show field names on the left
+        // 'cmb_styles' => false, // false to disable the CMB stylesheet
+        // 'closed'     => true, // Keep the metabox closed by default
+        'fields'        => array(
+          array(
+              'id'          => $prefix . 'sections',
+              'type'        => 'group',
+              'description' => __( 'Create some section', 'cmb' ),
+              'options'     => array(
+                  'group_title'   => __( 'Section {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
+                  'add_button'    => __( 'Add another section', 'cmb' ),
+                  'remove_button' => __( 'Remove section', 'cmb' ),
+                  'sortable'      => true, // beta
+              ),
+              // Fields array works the same, except id's only need to be unique for this group. Prefix is not needed.
+              'fields'      => array(
+                  array(
+                      'name' => 'Section Title',
+                      'id'   => 'title',
+                      'type' => 'text',
+                      // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+                  ),
+                  array(
+                      'name' => 'Section content',
+                      'description' => 'Add any content you want',
+                      'id'   => 'content',
+                      'type' => 'wysiwyg',
+                      'options'    => array (
+                        'wpautop' => true,
+                        'media_buttons' => false,
+                        //'teeny' => true, 
+                      ),
+                  ),
+                  array(
+                      'name' => 'Featured Image',
+                      'desc' => 'Upload an image or enter an URL.',
+                      'id' => 'image',
+                      'type' => 'file',
+                      // 'allow' => array( 'url', 'attachment' ) // limit to just attachments with array( 'attachment' )
+                  ),
+
+              ),
+          ), /* end of group def*/
+
+
+
+        ),
+    );
+
 
 
 
@@ -237,7 +302,7 @@ function ac_tagcat_support_all() {
 
 // ensure all tags are included in queries
 function ac_tagcat_support_query($query) {
-  if ( ( $query->get('tag') || $query->get('cat') ) &&  $query->is_main_query() ){
+  if ( ( $query->get('tag') || is_category() ) &&  $query->is_main_query() ){
     $query->set('post_type', array('post','page'));
     //$query->set('posts_per_page', -1);
     remove_all_actions ( '__after_loop');

@@ -12,6 +12,8 @@
     get_template_part('templates/header');
   ?>
   <div class="document" role="document">
+    <a class="doc__brand" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
+
     <a href="#" class="navbar-toggle">Menü</a>
 
       <?php if ( (is_page_template('template-torzslista.php')) || (is_page_template('template-intezmenylista.php')) ) : ?>

@@ -1,4 +1,5 @@
 <header class="banner" role="banner">
+  <div class="banner__inner">
     <div class="navbar-header">
       <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
     </div>
@@ -15,5 +16,5 @@
       ?>
       </div><!-- /.mainnav-holder -->
     </nav>
-
+  </div>
 </header>

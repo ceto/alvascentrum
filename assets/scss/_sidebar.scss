@@ -11,7 +11,7 @@
 	}
 
 	@include bp($s4){
-		padding-right: 2em;
+		//padding-right: 2em;
 		// width:336px;
 		// padding-left:24px;
 
@@ -19,20 +19,52 @@
 
 	.widget{
 		@include clearfix();
-		margin:0 0 2em 0;
-		h3{
-			font-size: 1.2em;
+		margin:0 0 1em 0;
+		.widget__title {
+			margin-top:0;
+			font-size: 1em;
+		}
+		p{
+			font-size:0.875em;
 		}
 	}
 }
 
 .sidebar--lower {
-	border-top: 1px solid $blue-extralight;
 }
 
 
 .sidebar--inner {
-	font-size: 0.75em;
+	//font-size: 0.75em;
 	@include clearfix();
 
+}
+
+
+
+/******* Intezmeny Sidebar elements ******/
+// .widget.widget--intezmeny {
+// 	background-color: $blue-extralight;
+// 	padding:1em 1em 1em 1em;
+// 	margin-left: -1em;
+// 	@include bp($s2) {
+// 		padding:1em 1em 1em 2em;
+// 		margin-left: -2em
+// 	}
+// 	@include bp($s3) {
+// 		margin-left: -2em
+// 	}
+
+// 	p {
+// 		font-size: 
+// 	}
+	
+// }
+.fulladdr {
+
+}
+
+.addrdsicl {
+	font-style: italic;
+	font-size: 0.875em;
 }

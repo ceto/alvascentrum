@@ -11,9 +11,13 @@
 	@include bp($s3){
 		font-size: 0.875em;
 	}
+
+	> p:first-child, > h2:first-child, > ul:first-child, > ol:first-child {
+		margin-top:0;
+	}
 }
 .main--hassidebar {
-	.entry__content, .archiveblock  {
+	.entry__content, .archiveblock {
 		@include bp($s2){
 			width:75%;
 			float:right;
@@ -22,7 +26,7 @@
 
 	
 		@include bp($s4){
-			padding-left:2em;
+			//padding-left:2em;
 		}
 	}
 
@@ -74,9 +78,29 @@
 }
 
 .torzs__summary{
-	font-size: 14px;
-	line-height: 24px;
 	p{
 		margin:0 0;
+	}
+}
+
+
+
+.mapblock {
+	height:300px;
+	margin-top:3em;
+	#map-canvas { 
+		height: 100%;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+
+.related__entries {
+	margin-top:2em;
+	padding-top: 2em;
+	border-top: 1px solid $blue-extralight;
+	.related__entries__items {
+		font-size:0.875em;
 	}
 }

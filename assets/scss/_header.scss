@@ -9,9 +9,11 @@
 		}
 		input[type="search"] {
 			width:100%;
-			padding: 0.333em 0.5em;
-			font-size: 0.875em;
-			font-family: $sans-serif;
+			padding: 0.75em 0.5em 0.5em;
+			font-size: 0.75em;
+			line-height: 1;
+			font-family: $serif;
+			font-style: italic;
 			border:none;
 			box-sizing:border-box;
 
@@ -25,6 +27,9 @@
 	@include clearfix();
 	width:17em;
 	float:right;
+	height:100vh;
+
+
 
 	transition: margin .4s ease;
 	
@@ -42,6 +47,18 @@
 	}
 }
 
+
+.banner__inner {
+	@include clearfix();
+	background-color: $blue-header;
+	height:100vh;
+	position: fixed;
+	width:17em;
+	background-image: url('../img/slogan.png');
+	background-size: 70% auto;
+	background-position: 30% 96%;
+	background-repeat: no-repeat;
+}
 
 .document {
 	position: relative;
@@ -85,10 +102,46 @@
 
 }
 
+
+.doc__brand {
+
+	@include hide-text();
+	background-image: url('../img/logo_blue.png');
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size: 100% auto;
+	color:red;
+	position: absolute;
+	//left:1em;
+	top:1.125em;
+	z-index:10;
+	display: inline-block;
+	font-size: 1em;
+	line-height: 1;
+	font-family: $sans-serif;
+	font-weight: 700;
+	margin: 0 0;
+	width:200px;
+	height:30px;
+	&:hover, &:focus {
+		opacity: 0.75;
+	}
+	@include bp($s3) {
+		display: none;
+	}
+}
+
 .torzs__header, .page__header, .entry__header {
 	position: relative;
 	@include clearfix();
+	padding-top: 5em;
+	padding-bottom: 3em;
 	
+	@include bp($s3){
+		padding-top: 2em;
+		
+	}
+
 	a{
 		color:$egg;
 
@@ -100,7 +153,7 @@
 
 		//color:$gray-text;
 		p {
-			margin:0.875em 0 3em 0;
+			margin:0.875em 0 0 0;
 		}
 		@include bp($s2){
 
@@ -114,11 +167,11 @@
 	font-family: $sans-serif;
 	font-size: 2em;
 	line-height: 1;
-	margin:2em 0 0.25em;
+	margin:0 0;
 	color:$blue-header;
 	@include bp($s2){
 		font-size: 3.5em;
-		margin-top: 1.5em;
+		
 	}
 
 }
@@ -128,7 +181,7 @@
 	line-height: 1.25;
 	//color:$blue-extralight;
 	margin-bottom: 1em;
-	margin-top: 0.25em;
+	margin-top: 0.5em;
 	@include bp($s2){
 		font-size: 1em;
 		line-height: 1;
@@ -146,12 +199,17 @@
 			font-style: normal;
 			text-transform: uppercase;
 			font-weight: 700;
-			text-transform: uppercase;	
 		}
 	}
-	.torzslink{
+	.torzslink {
+		//font-style: italic;
+		a {
 		display: inline-block;
 		font-style: italic;
+		text-transform: lowercase;
+		font-family: $serif;
+		font-weight: 400;
+		}
 	}
 	time{
 		display: inline-block;
@@ -161,7 +219,7 @@
 
 .breadcrumbs {
 	
-	margin:4em 0 0;
+	margin:0 0 0.25em;
 	padding:0 0 0 0;
 	font-family: $sans-serif;
 	font-size: 0.875em;
@@ -171,10 +229,10 @@
 	
 	@include bp($s2){
 		//font-size: 1em;
-		margin:0;
-		position: absolute;
-		left: 0;
-		top:2em;
+		//margin:0;
+		//position: absolute;
+		//left: 0;
+		//top:2em;
 	}
 	a {
 		color:$blue-light !important;
