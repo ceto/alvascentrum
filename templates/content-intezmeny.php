@@ -10,6 +10,9 @@
   </header>
   <aside class="sidebar" role="complementary">
     <div class="sidebar--inner">
+      <div class="widget widget--logo widget--intezmeny">
+        <?php the_post_thumbnail('tiny11'); ?>
+      </div>
       <div class="widget widget--location widget--intezmeny">
         <h3 class="widget__title">Hol található</h3>
         <p class="fulladdr">

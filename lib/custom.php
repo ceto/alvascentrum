@@ -122,6 +122,15 @@ function ac_intezmeny_metaboxes( array $meta_boxes ) {
         // 'closed'     => true, // Keep the metabox closed by default
         'fields'        => array(
             array(
+              'name'    => 'Finanszírozás',
+              'id'      => $prefix . 'finansz',
+              'type'    => 'radio',
+              'options' => array(
+                'OEP finanszírozott' => __( 'OEP finanszírozott', 'cmb2' ),
+                'Térítéses magán ellátás'   => __( 'Térítéses magán ellátás', 'cmb2' ),
+                ),
+            ),
+            array(
                 'name'       => __( 'Pontos cím', 'cmb2' ),
                 'id'         => $prefix . 'fulladdr',
                 'type'       => 'text',

@@ -34,7 +34,7 @@ Template Name: Intézmények listázása
 
 	<?php while ($the_pages->have_posts()) : $the_pages->the_post(); ?>
 
-	  <?php get_template_part('templates/content', 'torzsexp'); ?>
+	  <?php get_template_part('templates/content', 'intexp'); ?>
 	<?php endwhile; ?>
 </div>
 
