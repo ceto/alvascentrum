@@ -1,37 +1,51 @@
 <article <?php post_class(); ?>>
-  <header class="entry__header">
+  <header class="entry__header entry__header__int">
         <?php if ( function_exists('yoast_breadcrumb') ) {
           yoast_breadcrumb('<p class="breadcrumbs">','</p>');
       } ?>
     <h1 class="page__title"><?php the_title(); ?></h1>
     <div class="discl">
+      <span class="intexp__finansz">
+        <?php echo get_post_meta( $post->ID, '_addr_finansz', true ); ?>
+      </span>
       <p><?php echo get_the_excerpt(); ?></p>
     </div>
   </header>
   <aside class="sidebar" role="complementary">
     <div class="sidebar--inner">
-      <div class="widget widget--logo widget--intezmeny">
-        <?php the_post_thumbnail('tiny11'); ?>
+
+      <div class="side--logo">
+      <?php the_post_thumbnail('tiny11'); ?>
       </div>
+
       <div class="widget widget--location widget--intezmeny">
         <h3 class="widget__title">Hol található</h3>
-        <p class="fulladdr">
-          <?php echo get_post_meta( $post->ID, '_addr_fulladdr', true ); ?>
-        </p>
-        <?php if (get_post_meta( $post->ID, '_addr_addrdiscl', true )): ?>
-          <p class="addrdsicl"><?php echo get_post_meta( $post->ID, '_addr_addrdiscl', true ); ?></p>
-        <?php endif ?>
+        <div class="widget__body">
+          <p class="fulladdr">
+            <?php echo get_post_meta( $post->ID, '_addr_fulladdr', true ); ?>
+          </p>
+          <?php if (get_post_meta( $post->ID, '_addr_addrdiscl', true )): ?>
+            <p class="addrdsicl"><?php echo get_post_meta( $post->ID, '_addr_addrdiscl', true ); ?></p>
+          <?php endif ?>
+        </div>
       </div>
+
       <div class="widget widget--contact widget--intezmeny">
         <h3 class="widget__title">Kontakt</h3>
-        <p class="addrtel">Telefon: <?php echo get_post_meta( $post->ID, '_addr_telefon', true ); ?></p>
-        <p class="addrmail">Email: <?php echo get_post_meta( $post->ID, '_addr_email', true ); ?></p>
-        <p class="addrurl">Web: <?php echo get_post_meta( $post->ID, '_addr_url', true ); ?></p>
+        <div class="widget__body">
+          <p class="addrtel">Telefon: <?php echo get_post_meta( $post->ID, '_addr_telefon', true ); ?></p>
+          <p class="addrmail">Email: <?php echo get_post_meta( $post->ID, '_addr_email', true ); ?></p>
+          <p class="addrurl">Web: <?php echo get_post_meta( $post->ID, '_addr_url', true ); ?></p>
+        </div>
       </div>
+
       <div class="widget widget--open widget--intezmeny">
         <h3 class="widget__title">Rendelési idő</h3>
-        <?php echo get_post_meta( $post->ID, '_addr_nyitva', true ); ?>
+        <div class="widget__body">
+          <?php echo wpautop(get_post_meta( $post->ID, '_addr_nyitva', true )); ?>
+        </div>
       </div>
+
     </div>
   </aside><!-- /.sidebar -->
   <div class="entry__content">

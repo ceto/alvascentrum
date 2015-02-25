@@ -25,7 +25,7 @@
 			width: 50%;
 			float:left;
 		}
-		@include bp($s3){
+		@include bp($s2){
 			width: 33.333%;
 			float:left;
 		}

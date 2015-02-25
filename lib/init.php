@@ -44,27 +44,27 @@ function roots_widgets_init() {
     'name'          => __('Primary', 'roots'),
     'id'            => 'sidebar-primary',
     'before_widget' => '<section class="widget %1$s %2$s">',
-    'after_widget'  => '</section>',
+    'after_widget'  => '</div></section>',
     'before_title'  => '<h3 class="widget__title">',
-    'after_title'   => '</h3>',
+    'after_title'   => '</h3><div class="widget__body">',
   ));
 
   register_sidebar(array(
     'name'          => __('Footer Blocks', 'roots'),
     'id'            => 'sidebar-fblocks',
     'before_widget' => '<section class="widget %1$s %2$s">',
-    'after_widget'  => '</section>',
+    'after_widget'  => '</div></section>',
     'before_title'  => '<h3 class="widget__title">',
-    'after_title'   => '</h3>',
+    'after_title'   => '</h3><div class="widget__body">',
   ));
 
   register_sidebar(array(
     'name'          => __('Footer', 'roots'),
     'id'            => 'sidebar-footer',
     'before_widget' => '<section class="widget %1$s %2$s">',
-    'after_widget'  => '</section>',
+    'after_widget'  => '</div></section>',
     'before_title'  => '<h3 class="widget__title">',
-    'after_title'   => '</h3>',
+    'after_title'   => '</h3><div class="widget__body">',
   ));
 }
 add_action('widgets_init', 'roots_widgets_init');

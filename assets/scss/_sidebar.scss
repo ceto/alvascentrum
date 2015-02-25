@@ -20,15 +20,89 @@
 	.widget{
 		@include clearfix();
 		margin:0 0 1em 0;
-		.widget__title {
-			margin-top:0;
-			font-size: 1em;
-		}
+
 		p{
-			font-size:0.875em;
+			margin:0 0 0.5em;
+			font-size:0.75em;
+			line-height: 1;
+		}
+
+	}
+
+	.widget__title {
+		@include clearfix();
+		//background-color: $blue-header;
+		//color:#fff;
+		margin:0 0;
+		//padding:0.666em 0.666em 0.25em;
+		font-size: 0.875em;
+	}
+
+	.widget__body {
+		@include clearfix();
+		//border:1px solid $blue-extralight;
+		padding:0.5em 0 0;
+
+	}
+	
+	.side--logo {
+		margin:0 0 1em;
+		//background-color: $blue-header;
+		//padding:0.5em;
+		//margin-bottom: 0;
+		text-align: left;
+		@include bp($s2) {
+			text-align: center;
+		}
+	
+		img {
+		
+			width:4em;
+						
+			@include bp($s2) {
+				width: 7em;
+			}
+		
+			
 		}
 	}
+
+
+	.widget--intezmeny {
+		@include bp($s1) {
+			width: 49%;
+			float:left;
+			margin-right: 1%;
+			clear:left;
+			
+			&:nth-child(2n+1) {
+				clear:right;
+				float:right;
+				margin-left: 1%;
+				margin-right: 0;
+			}
+		}
+		@include bp($s2) {
+			width:auto;
+			float:none;
+			margin-right:0;
+			margin-left:0;
+			clear: none;
+			&:nth-child(2n+1) {
+				width:auto;
+				float:none;
+				margin-right:0;
+				margin-left:0;
+				clear: none;
+			}
+		}
+	}
+
+
 }
+
+
+
 
 .sidebar--lower {
 }
