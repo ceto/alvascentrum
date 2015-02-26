@@ -53,6 +53,7 @@
 	background-color: $blue-header;
 	height:100vh;
 	position: fixed;
+	z-index: 1;
 	width:17em;
 	background-image: url('../img/slogan.png');
 	background-size: 70% auto;

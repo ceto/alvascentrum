@@ -1,108 +1,123 @@
-<article <?php post_class(); ?>>
-  <header class="entry__header entry__header__int">
-        <?php if ( function_exists('yoast_breadcrumb') ) {
-          yoast_breadcrumb('<p class="breadcrumbs">','</p>');
-      } ?>
-    <h1 class="page__title"><?php the_title(); ?></h1>
-    <div class="discl">
-      <span class="intexp__finansz">
-        <?php echo get_post_meta( $post->ID, '_addr_finansz', true ); ?>
-      </span>
-      <p><?php echo get_the_excerpt(); ?></p>
+<div class="subcsusza">
+  <div class="subcsusza__side">
+    <div class="side__inner">
+      <h3>Jelentkezés vizsgálatra</h3>
+      <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum distinctio iste culpa illum, quaerat nulla dolores nemo veniam perferendis maxime reprehenderit ipsum, autem maiores commodi incidunt voluptatibus itaque rem adipisci!
+      </p>
     </div>
-  </header>
-  <aside class="sidebar" role="complementary">
-    <div class="sidebar--inner">
-
-      <div class="side--logo">
-      <?php the_post_thumbnail('tiny11'); ?>
-      </div>
-
-      <div class="widget widget--location widget--intezmeny">
-        <h3 class="widget__title">Hol található</h3>
-        <div class="widget__body">
-          <p class="fulladdr">
-            <?php echo get_post_meta( $post->ID, '_addr_fulladdr', true ); ?>
-          </p>
-          <?php if (get_post_meta( $post->ID, '_addr_addrdiscl', true )): ?>
-            <p class="addrdsicl"><?php echo get_post_meta( $post->ID, '_addr_addrdiscl', true ); ?></p>
-          <?php endif ?>
+  </div><!-- /.subcsusza__side -->
+  
+  <div class="subcsusza__content">
+    <article <?php post_class(); ?>>
+      <header class="entry__header entry__header__int">
+            <?php if ( function_exists('yoast_breadcrumb') ) {
+              yoast_breadcrumb('<p class="breadcrumbs">','</p>');
+          } ?>
+        <h1 class="page__title"><?php the_title(); ?></h1>
+        <div class="discl">
+          <span class="intexp__finansz">
+            <?php echo get_post_meta( $post->ID, '_addr_finansz', true ); ?>
+          </span>
+          <p><?php echo get_the_excerpt(); ?></p>
         </div>
-      </div>
+      </header>
+      <aside class="sidebar" role="complementary">
+        <div class="sidebar--inner">
 
-      <div class="widget widget--contact widget--intezmeny">
-        <h3 class="widget__title">Kontakt</h3>
-        <div class="widget__body">
-          <p class="addrtel">Telefon: <?php echo get_post_meta( $post->ID, '_addr_telefon', true ); ?></p>
-          <p class="addrmail">Email: <?php echo get_post_meta( $post->ID, '_addr_email', true ); ?></p>
-          <p class="addrurl">Web: <?php echo get_post_meta( $post->ID, '_addr_url', true ); ?></p>
-        </div>
-      </div>
-
-      <div class="widget widget--open widget--intezmeny">
-        <h3 class="widget__title">Rendelési idő</h3>
-        <div class="widget__body">
-          <?php echo wpautop(get_post_meta( $post->ID, '_addr_nyitva', true )); ?>
-        </div>
-      </div>
-
-    </div>
-  </aside><!-- /.sidebar -->
-  <div class="entry__content">
-    <?php the_content(); ?>
-
-    <?php if ($accordion = get_post_meta( get_the_ID(), '_data_accordion', true )) : ?>
-      
-      <section class="intezmeny__details">
-        <div class="panel-group" id="detaacc-<?php echo get_the_ID(); ?>" role="tablist" aria-multiselectable="true">
-          <?php foreach ( (array) $accordion as $key => $collapsible ) {  ?>
-            <div class="panel">
-              <div class="panel-heading" role="tab" id="heading-<?php echo $key; ?>">
-                <h3 class="panel-title">
-                  <a class="" data-toggle="collapse" href="#collapse-<?php echo $key; ?>" aria-expanded="false" aria-controls="collapsexample-<?php echo $key; ?>">
-                    <?php echo $collapsible['title']; ?>
-                  </a>
-                </h3>
-              </div>
-              <div class="collapse panel-collapse" id="collapse-<?php echo $key; ?>" role="tabpanel" aria-labelledby="heading-<?php echo $key; ?>">
-                <div class="panel-body">
-                  <?php echo wpautop($collapsible['content']); ?>
-                </div>
-              </div>
+          <div class="side--logo">
+          <?php the_post_thumbnail('tiny11'); ?>
+          </div>
+          <a href="#" class="btn openform"><i class="ion ion-ios-medkit"></i> Online jelentkezés</a>
+          <div class="widget widget--location widget--intezmeny">
+            <h3 class="widget__title">Hol található</h3>
+            <div class="widget__body">
+              <p class="fulladdr">
+                <?php echo get_post_meta( $post->ID, '_addr_fulladdr', true ); ?>
+              </p>
+              <?php if (get_post_meta( $post->ID, '_addr_addrdiscl', true )): ?>
+                <p class="addrdsicl"><?php echo get_post_meta( $post->ID, '_addr_addrdiscl', true ); ?></p>
+              <?php endif ?>
             </div>
-          <?php } ?>
+          </div>
+
+          <div class="widget widget--contact widget--intezmeny">
+            <h3 class="widget__title">Kontakt</h3>
+            <div class="widget__body">
+              <p class="addrtel">Telefon: <?php echo get_post_meta( $post->ID, '_addr_telefon', true ); ?></p>
+              <p class="addrmail">Email: <?php echo get_post_meta( $post->ID, '_addr_email', true ); ?></p>
+              <p class="addrurl">Web: <?php echo get_post_meta( $post->ID, '_addr_url', true ); ?></p>
+            </div>
+          </div>
+
+          <div class="widget widget--open widget--intezmeny">
+            <h3 class="widget__title">Rendelési idő</h3>
+            <div class="widget__body">
+              <?php echo wpautop(get_post_meta( $post->ID, '_addr_nyitva', true )); ?>
+            </div>
+          </div>
+
         </div>
-      </section>
-    <?php endif; ?>
-    
-    <section class="mapblock">
-      <h2>Térkép</h2>
-      <div id="map-canvas"></div>
-    </section>
+      </aside><!-- /.sidebar -->
+      <div class="entry__content">
+        <?php the_content(); ?>
 
-  </div>
-
-
-
-  <aside class="sidebar sidebar--lower" role="complementary">
-    <div class="sidebar--inner">
-      <nav class="widget widget--sidebarnav" role="navigation">
+        <?php if ($accordion = get_post_meta( get_the_ID(), '_data_accordion', true )) : ?>
+          
+          <section class="intezmeny__details">
+            <div class="panel-group" id="detaacc-<?php echo get_the_ID(); ?>" role="tablist" aria-multiselectable="true">
+              <?php foreach ( (array) $accordion as $key => $collapsible ) {  ?>
+                <div class="panel">
+                  <div class="panel-heading" role="tab" id="heading-<?php echo $key; ?>">
+                    <h3 class="panel-title">
+                      <a class="" data-toggle="collapse" href="#collapse-<?php echo $key; ?>" aria-expanded="false" aria-controls="collapsexample-<?php echo $key; ?>">
+                        <?php echo $collapsible['title']; ?>
+                      </a>
+                    </h3>
+                  </div>
+                  <div class="collapse panel-collapse" id="collapse-<?php echo $key; ?>" role="tabpanel" aria-labelledby="heading-<?php echo $key; ?>">
+                    <div class="panel-body">
+                      <?php echo wpautop($collapsible['content']); ?>
+                    </div>
+                  </div>
+                </div>
+              <?php } ?>
+            </div>
+          </section>
+        <?php endif; ?>
         
-        <h3 class="subnav__title">Intézmények</h3>
-        <?php
-          if (has_nav_menu('intezmeny_navigation')) :
-            wp_nav_menu(array('theme_location' => 'intezmeny_navigation', 'menu_class' => 'subnav'));
-          endif;
-         ?>
-        </nav>
-       <?php include roots_sidebar_path(); ?>
+        <section class="mapblock">
+          <h2>Térkép</h2>
+          <div id="map-canvas"></div>
+        </section>
+
       </div>
-  </aside><!-- /.sidebar -->
-  <footer>
-    <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
-  </footer>
-  <?php // comments_template('/templates/comments.php'); ?>
-</article>
+
+
+
+      <aside class="sidebar sidebar--lower" role="complementary">
+        <div class="sidebar--inner">
+          <nav class="widget widget--sidebarnav" role="navigation">
+            
+            <h3 class="subnav__title">Intézmények</h3>
+            <?php
+              if (has_nav_menu('intezmeny_navigation')) :
+                wp_nav_menu(array('theme_location' => 'intezmeny_navigation', 'menu_class' => 'subnav'));
+              endif;
+             ?>
+            </nav>
+           <?php include roots_sidebar_path(); ?>
+          </div>
+      </aside><!-- /.sidebar -->
+      <footer>
+        <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
+      </footer>
+      <?php // comments_template('/templates/comments.php'); ?>
+    </article>
+
+
+  </div><!-- /.subcsusza__content -->
+</div><!-- /.subcsusza -->
 
 
 

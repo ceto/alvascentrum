@@ -70,6 +70,14 @@ $(document).ready(function() {
     $('.banner').toggleClass('is_show');
     $('body').toggleClass('nav_isactive');
   });
+
+  $('.openform').click(function(){
+    $( this ).toggleClass('active');
+    $('.subcsusza__side').toggleClass('subcsusza__side--is_show');
+    $('.subcsusza').toggleClass('subcsusza--isactive');
+  });
+
+
 });
 
 
