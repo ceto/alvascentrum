@@ -20,8 +20,8 @@
   $contact_tel = isset($_POST['contact_tel'])?$_POST['contact_tel']:'';
   $contact_message = isset($_POST['contact_message'])?$_POST['contact_message']:'';
   $contact_human = isset($_POST['contact_human'])?$_POST['contact_human']:'';
-  $to = 'szabogabor@hydrogene.hu';
-  //$to=get_post_meta( $post->ID, '_addr_email', true );
+  //$to = 'szabogabor@hydrogene.hu';
+  $to=get_post_meta( $post->ID, '_addr_email', true );
   $subject = "Webes jelentkezes - ".get_bloginfo('name');
   
   $headers = "From: " . strip_tags($contact_email) . "\r\n";
