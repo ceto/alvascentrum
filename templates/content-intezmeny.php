@@ -1,14 +1,9 @@
-<div class="subcsusza">
-  <div class="subcsusza__side">
-    <div class="side__inner">
-      <h3>Jelentkezés vizsgálatra</h3>
-      <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum distinctio iste culpa illum, quaerat nulla dolores nemo veniam perferendis maxime reprehenderit ipsum, autem maiores commodi incidunt voluptatibus itaque rem adipisci!
-      </p>
-    </div>
-  </div><!-- /.subcsusza__side -->
-  
-  <div class="subcsusza__content">
+
+
+  <?php 
+    global $response;
+    echo $response; 
+  ?>
     <article <?php post_class(); ?>>
       <header class="entry__header entry__header__int">
             <?php if ( function_exists('yoast_breadcrumb') ) {
@@ -116,8 +111,7 @@
     </article>
 
 
-  </div><!-- /.subcsusza__content -->
-</div><!-- /.subcsusza -->
+
 
 
 

@@ -12,7 +12,7 @@
   <div class="wrapper wrapper--wide">
 		<div class="sitefooter--inner">
     	<?php //dynamic_sidebar('sidebar-footer'); ?>
-      &copy; 2015 &middot; Somnius Kft. &middot; All rights reserved &middot; Hanmade with Love by <a href="http://hydrogene.hu">Hydrogene</a>
+      &copy; 2015 &middot; Somnius Kft. &middot; All rights reserved &middot; Handmade with Love by <a href="http://hydrogene.hu">Hydrogene</a>
     </div>
   </div>
 </footer>

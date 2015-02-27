@@ -20,7 +20,7 @@
 
     <?php if ( is_home() ): ?>
       <div class="discl">
-        <p>Nulla vitae elit libero, a pharetra augue. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam id dolor id nibh ultricies vehicula ut id elit. </p>
+        <p>Ha szeretne mindent tudni az alvásról, az alvásbetegségekről, azok terápiás módszereiről vagy kíváncsi az alvással kapcsolatos érdekességekre, merüljön el az alvascentrum.hu cikkeiben. </p>
       </div>
     <?php endif; ?>
 </div>

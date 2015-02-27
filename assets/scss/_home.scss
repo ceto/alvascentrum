@@ -17,9 +17,13 @@
 	background-position: center center;
 	//background-attachment: fixed;
 	background-size: cover;
-	margin:0 -1em;
+	margin:-2em -1em 0 -1em;
 	@include bp($s1) {
-		margin:0 -2em;
+		margin:-2em -2em 0 -2em;
+	}
+
+	@include bp($s3) {
+		margin-top: 0;
 	}
 
 

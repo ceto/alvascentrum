@@ -1,81 +1,3 @@
-/******** Floating Panels *******/
-.subcsusza__side {
-  float: left;
-
-  width: 23em;
-  height: 100vh;
-  margin-left: -100%;
-
-  transition: margin .4s ease;
-
-  @include clearfix();
-  .subcsusza--isactive & {
-    margin-right: 2em;
-    margin-left: -2em;
-  }
-
-  @include bp($s1) {
-		width:28em;
-  }
-  @include bp($s2) {
-		width:35em;
-  }
-  @include bp($s4) {
-		width:35em;
-  }
-  @include bp($s5) {
-		width:40em;
-  }
-}
-
-.side__inner {
-  position: fixed;
-
-  width: 23em;
-  height: 100vh;
-  padding: 2em;
-
-  color: $side-text;
-  background-color: $side-bg;
-
-  @include clearfix();
-  h3 {
-  	margin-top: 0;
-    font-size: 3.5em;
-    line-height: 1;
-
-    color: #fff;
-  }
-
-  @include bp($s1) {
-  	width:28em;
-  }
-  @include bp($s2) {
-		width:35em;
-  }
-  @include bp($s4) {
-		width:35em;
-  }
-  @include bp($s5) {
-		width:40em;
-  }
-}
-
-.subcsusza__content {
-  float: left;
-
-  width: 100%;
-
-  transition: margin .4s ease;
-
-  @include clearfix();
-  .subcsusza--isactive & {
-    margin-right: -100%;
-  }
-
-
-}
-
 .openform {
   display: block;
 
@@ -201,3 +123,5 @@
     //margin:0 0;
   }
 }
+
+

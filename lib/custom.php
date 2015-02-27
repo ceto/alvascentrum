@@ -341,7 +341,7 @@ function ac_DequeueYarppStyle()
   wp_dequeue_style('yarppRelatedCss');
   wp_deregister_style('yarppRelatedCss');
 }
-add_action('wp_footer', ac_DequeueYarppStyle);
+add_action('wp_footer', 'ac_DequeueYarppStyle');
 
 function ac_remove_scripts () {
   if(!is_admin()){ 

@@ -18,7 +18,7 @@
 	}
 
 	.widget {
-		font-size: 0.75em;
+		font-size: 0.875em;
 		margin:1em 0;
 
 		@include bp($s1){
@@ -42,8 +42,10 @@
 
 		li {
 			list-style-type: none;
+			//font-family: $serif;
+			//font-style:italic;
 			//text-transform: uppercase;
-			margin:0 1em 0.333em 0;
+			margin:0 1em 0.5em 0;
 			> a {
 				color:$gray-light;
 			}
@@ -66,7 +68,7 @@
 	border-top: 1px solid lightgray;
 }
 .sitefooter--inner {
-	font-size: 0.75em;
+	font-size: 0.875em;
 	font-family: $sans-serif;
 
 }

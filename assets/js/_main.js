@@ -69,12 +69,30 @@ $(document).ready(function() {
     $( this ).toggleClass('active');
     $('.banner').toggleClass('is_show');
     $('body').toggleClass('nav_isactive');
+
+
+
+    $( '.openform' ).removeClass('active');
+    $('.subcsusza__side').removeClass('subcsusza__side--is_show');
+    $('.subcsusza').removeClass('subcsusza--isactive');
   });
 
   $('.openform').click(function(){
     $( this ).toggleClass('active');
     $('.subcsusza__side').toggleClass('subcsusza__side--is_show');
     $('.subcsusza').toggleClass('subcsusza--isactive');
+    
+    $( '.navbar-toggle, .home-start' ).removeClass('active');
+    $('.banner').removeClass('is_show');
+    $('body').removeClass('nav_isactive');
+
+
+  });
+
+  $('.btn--sideclose').click(function(){
+    $( '.openform' ).removeClass('active');
+    $('.subcsusza__side').removeClass('subcsusza__side--is_show');
+    $('.subcsusza').removeClass('subcsusza--isactive');
   });
 
 
