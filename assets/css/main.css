@@ -2888,6 +2888,10 @@ blockquote {
   .banner__searchblock .search--form .input-group-btn {
     display: none; }
 
+.container {
+  width: 100%;
+  overflow-x: hidden; }
+
 .banner {
   width: 17em;
   float: right;
@@ -2912,6 +2916,7 @@ blockquote {
 .banner__inner {
   background-color: #008db2;
   height: 100vh;
+  overflow-y: auto;
   position: fixed;
   z-index: 1;
   width: 17em;
@@ -3456,9 +3461,9 @@ blockquote {
 /******** Floating Panels *******/
 .subcsusza__side {
   float: left;
-  width: 23em;
-  height: 100vh;
-  margin-left: -100%;
+  width: 288px;
+  min-height: 100vh;
+  margin-left: -320px;
   -webkit-transition: margin .4s ease;
           transition: margin .4s ease; }
   .subcsusza__side:before, .subcsusza__side:after {
@@ -3468,7 +3473,8 @@ blockquote {
     clear: both; }
   @media only screen and (min-width: 480px) {
     .subcsusza__side {
-      width: 28em; } }
+      width: 28em;
+      margin-left: -100%; } }
   @media only screen and (min-width: 768px) {
     .subcsusza__side {
       width: 35em; } }
@@ -3479,15 +3485,24 @@ blockquote {
     .subcsusza__side {
       width: 40em; } }
   .subcsusza--isactive .subcsusza__side {
-    margin-right: 2em;
-    margin-left: -2em; }
+    margin-right: 1em;
+    margin-left: -1em; }
+    @media only screen and (min-width: 480px) {
+      .subcsusza--isactive .subcsusza__side {
+        margin-right: 2em;
+        margin-left: -2em; } }
+    @media only screen and (min-width: 1024px) {
+      .subcsusza--isactive .subcsusza__side {
+        margin-right: 2em;
+        margin-left: -2em; } }
 
 .side__inner {
   position: fixed;
   overflow-y: auto;
-  width: 23em;
+  overflow-x: hidden;
+  width: 288px;
   height: 100vh;
-  padding: 2em 2em;
+  padding: 2em 1em;
   color: #008db2;
   background-color: #005266; }
   .side__inner:before, .side__inner:after {
@@ -3513,15 +3528,11 @@ blockquote {
     .side__inner {
       width: 40em;
       padding: 2em 6em; } }
-  .side__inner h3 {
-    font-size: 3.5em;
-    line-height: 1;
-    margin-top: 0;
-    color: #fff; }
 
 .subcsusza__content {
   position: relative;
   float: left;
+  min-height: 100vh;
   width: 100%;
   -webkit-transition: margin .4s ease;
           transition: margin .4s ease; }
@@ -3555,16 +3566,28 @@ blockquote {
     color: #008db2; }
 
 .side__intezmeny {
-  margin: 0; }
+  margin: 0;
+  line-height: 1em;
+  margin-bottom: 0.5em; }
 
 .side__title {
-  margin: 0; }
+  margin: 0;
+  font-size: 1.5em;
+  line-height: 1;
+  margin-top: 0;
+  color: #fff; }
+  @media only screen and (min-width: 480px) {
+    .side__title {
+      font-size: 3.5em; } }
 
 .side__discl {
   font-family: 'Helvetica Neu', 'Roboto', sans-serif;
-  font-size: 1.25em;
+  font-size: 1em;
   line-height: 1.2;
   font-weight: 700; }
+  @media only screen and (min-width: 480px) {
+    .side__discl {
+      font-size: 1.25em; } }
   .side__discl a {
     color: #fff; }
 
