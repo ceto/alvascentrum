@@ -25,7 +25,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     get_template_part('templates/header');
   ?>
   <div class="document" role="document">
-     
+    
+ <?php if (is_singular('intezmeny')): ?>
     <div class="subcsusza">
       <div class="subcsusza__side">
         <div class="side__inner">
@@ -35,6 +36,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
 
       <div class="subcsusza__content">
+<?php endif; ?>
+
         <header class="mobileheader">
           <a class="doc__brand" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
           <a href="#" class="navbar-toggle">Menü <i class="ion ion-navicon-round"></i></a>
@@ -48,9 +51,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </main><!-- /.main -->
 
       <?php get_template_part('templates/footer'); ?>
-    </div>
+
+<?php if (is_singular('intezmeny')): ?>
+    </div><!--/.subcsusza__content -->
 
     </div> <!--/.subcsusza -->
+<?php endif; ?>
 
   </div><!-- /.document -->
 

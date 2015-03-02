@@ -3402,7 +3402,7 @@ blockquote {
     display: table; }
   .intexp:after {
     clear: both; }
-  @media only screen and (min-width: 1280px) {
+  @media only screen and (min-width: 480px) {
     .intexp {
       display: inline-block;
       width: 48%;

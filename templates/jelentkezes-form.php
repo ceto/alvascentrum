@@ -63,7 +63,9 @@ if(!$contact_human == 0){
 <h4 class="side__intezmeny"><?php the_title(); ?></h4>
 <h3 class="side__title">Jelentkezés vizsgálatra</h3>
 <p class="side__discl">
-Adja meg elérhetőségeit, kollégánk felveszi Önnel a kapcsolatot. Vagy hívja közvetlenül a <a href="tel:<?php echo get_post_meta( $post->ID, '_addr_telefon', true ); ?>"><?php echo get_post_meta( $post->ID, '_addr_telefon', true ); ?></a> telefonszámot.
+Adja meg elérhetőségeit, kollégánk felveszi Önnel a kapcsolatot. Vagy hívja közvetlenül a
+  <?php foreach ( (array) get_post_meta( $post->ID, '_addr_telefon', true ) as $key => $telszam ) {  ?>
+    <?php if ($key>0) {echo ', ';} ?><a href="tel:<?php echo $telszam; ?>"><?php echo $telszam; ?></a><?php } ?> telefonszámot.
 </p>
 
 		<div class="contactformwrap" aria-labelledby="contactformwrap">

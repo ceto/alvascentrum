@@ -27,7 +27,7 @@
   margin: 0 0 4em;
 
   @include clearfix();
-  @include bp($s4) {
+  @include bp($s1) {
     display: inline-block;
 
     width: 48%;

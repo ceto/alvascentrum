@@ -23,7 +23,10 @@
           <div class="side--logo">
           <?php the_post_thumbnail('tiny11'); ?>
           </div>
-          <a href="#" class="btn openform"><i class="ion ion-ios-medkit"></i> Online jelentkezés</a>
+          <?php if( get_post_meta( $post->ID, '_addr_online', true ) ): ?>
+            <a href="#" class="btn openform"><i class="ion ion-ios-medkit"></i> Online jelentkezés</a>
+          <?php endif ?>
+          
           <div class="widget widget--location widget--intezmeny">
             <h3 class="widget__title">Hol található</h3>
             <div class="widget__body">
@@ -39,7 +42,11 @@
           <div class="widget widget--contact widget--intezmeny">
             <h3 class="widget__title">Kontakt</h3>
             <div class="widget__body">
-              <p class="addrtel">Telefon: <?php echo get_post_meta( $post->ID, '_addr_telefon', true ); ?></p>
+              <p class="addrtel">Telefon: 
+                <?php foreach ( (array) get_post_meta( $post->ID, '_addr_telefon', true ) as $key => $telszam ) {  ?>
+                  <?php if ($key>0) {echo ', ';} ?>
+                  <a href="tel:<?php echo $telszam?>"><?php echo $telszam; ?></a><?php } ?>
+              </p>
               <p class="addrmail">Email: <?php echo get_post_meta( $post->ID, '_addr_email', true ); ?></p>
               <p class="addrurl">Web: <?php echo get_post_meta( $post->ID, '_addr_url', true ); ?></p>
             </div>

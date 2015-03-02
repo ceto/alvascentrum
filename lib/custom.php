@@ -131,6 +131,15 @@ function ac_intezmeny_metaboxes( array $meta_boxes ) {
                 ),
             ),
             array(
+              'name'    => 'Online jelentkezés',
+              'id'      => $prefix . 'online',
+              'type'    => 'radio',
+              'options' => array(
+                '1'   => __( 'Engedélyezett', 'cmb2' ),
+                '0' => __( 'Tiltott', 'cmb2' )
+              ),
+            ),
+            array(
                 'name'       => __( 'Pontos cím', 'cmb2' ),
                 'id'         => $prefix . 'fulladdr',
                 'type'       => 'text',
@@ -161,7 +170,7 @@ function ac_intezmeny_metaboxes( array $meta_boxes ) {
                 'name' => __( 'Telefon', 'cmb2' ),
                 'id'   => $prefix . 'telefon',
                 'type' => 'text',
-                // 'repeatable' => true,
+                'repeatable' => true,
             ),
             array(
                 'name'       => __( 'Rendelési idő', 'cmb2' ),
