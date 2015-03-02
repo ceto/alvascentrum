@@ -24,7 +24,7 @@
           <?php the_post_thumbnail('tiny11'); ?>
           </div>
           <?php if( get_post_meta( $post->ID, '_addr_online', true ) ): ?>
-            <a href="#" class="btn openform"><i class="ion ion-ios-medkit"></i> Online jelentkezés</a>
+            <a href="#contactform" id="openform" class="btn openform"><i class="ion ion-ios-medkit"></i> Online jelentkezés</a>
           <?php endif ?>
           
           <div class="widget widget--location widget--intezmeny">

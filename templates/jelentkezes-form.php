@@ -93,7 +93,7 @@ Adja meg elérhetőségeit, kollégánk felveszi Önnel a kapcsolatot. Vagy hív
 				<div class="formitem formitem--actions">
 				  <input type="hidden" name="contact_human" value="2">
         	<input type="hidden" name="submitted" value="1">
-					<input type="submit" class="btn btn--submit" value="Jelentkezés elküldése">
+					<input id="submitform" type="submit" class="btn btn--submit" value="Jelentkezés elküldése">
 				</div>
 			</form>
 		</div>
