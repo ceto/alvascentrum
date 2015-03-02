@@ -64,6 +64,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <?php wp_footer(); ?>
-  <script src="//szabogabi.com:35729/livereload.js"></script>
+  <!-- script src="//szabogabi.com:35729/livereload.js"></script -->
 </body>
 </html>
