@@ -1,21 +1,40 @@
 .openform {
-  display: block;
-
-  margin-bottom: 2em;
-  padding: .5em 1em 1em;
-
+  display: inline-block;
+  font-weight: 700;
+  padding: 1em 1em 1em;
   text-align: center;
+  @include bp($s1){
+    display: inline-block;
+  }
   i {
-    font-size: 3em;
+    //font-size: 3em;
 
-    display: block;
+    //display: block;
   }
 }
 
 
 
+.bannerhirdetes {
+  text-align: center;
+}
 
 
+.int__content {
+}
+
+
+.mapblock {
+  @include clearfix();
+  height:380px;
+  margin:1em 0 0;
+  //position: relative;
+  #map-canvas {
+    height: 300px;
+    margin: 0;
+    padding: 0;
+  }
+}
 
 
 /********** Intezmenylista ********/

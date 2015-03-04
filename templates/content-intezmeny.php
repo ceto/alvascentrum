@@ -2,11 +2,12 @@
 
   <?php 
     global $response;
-    echo $response; 
+    echo $response;
+    $parent_id = 66;
   ?>
     <article <?php post_class(); ?>>
       <header class="entry__header entry__header__int">
-            <?php if ( function_exists('yoast_breadcrumb') ) {
+          <?php if ( function_exists('yoast_breadcrumb') ) {
               yoast_breadcrumb('<p class="breadcrumbs">','</p>');
           } ?>
         <h1 class="page__title"><?php the_title(); ?></h1>
@@ -20,16 +21,35 @@
       <aside class="sidebar" role="complementary">
         <div class="sidebar--inner">
 
-          <div class="side--logo">
-          <?php the_post_thumbnail('tiny11'); ?>
-          </div>
           <?php if( get_post_meta( $post->ID, '_addr_online', true ) ): ?>
-            <a href="#contactform" id="openform" class="btn openform"><i class="ion ion-ios-medkit"></i> Online jelentkezés</a>
+            <section class="widget widget--openform widget--intezmeny">
+              <div class="widget__body">
+                <a href="#" id="openform" class="btn openform"><i class="ion ion-clipboard"></i> Online jelentkezés</a>
+              </div>
+            </section>
           <?php endif ?>
-          
-          <div class="widget widget--location widget--intezmeny">
-            <h3 class="widget__title">Hol található</h3>
+
+          <section class="widget widget--callme widget--intezmeny">
             <div class="widget__body">
+              <h3 class="widget__title">Érdeklődjön telefonon</h3> 
+              <p>
+                <?php foreach ( (array) get_post_meta( $post->ID, '_addr_telefon', true ) as $key => $telszam ) {  ?>
+                <?php if ($key>0) {echo 'vagy ';} ?>
+                  <a class="telcsi telcsi-<?php echo $key; ?>" href="tel:<?php echo $telszam?>"><?php echo $telszam; ?></a>
+                <?php } ?>
+              </p>
+            </div>
+          </section>
+          <section class="widget widget--intlogo widget--intezmeny">
+            <div class="widget__body">
+              <div class="side--logo">
+                <?php the_post_thumbnail('tiny11'); ?>
+              </div>
+            </div>
+          </section>
+          <section class="widget widget--location widget--intezmeny">
+            <div class="widget__body">
+              <h3 class="widget__title">Hol található</h3>
               <p class="fulladdr">
                 <?php echo get_post_meta( $post->ID, '_addr_fulladdr', true ); ?>
               </p>
@@ -37,31 +57,31 @@
                 <p class="addrdsicl"><?php echo get_post_meta( $post->ID, '_addr_addrdiscl', true ); ?></p>
               <?php endif ?>
             </div>
-          </div>
+          </section>
 
-          <div class="widget widget--contact widget--intezmeny">
-            <h3 class="widget__title">Kontakt</h3>
+          <section class="widget widget--contact widget--intezmeny">
             <div class="widget__body">
+              <h3 class="widget__title">Kapcsolat</h3>
               <p class="addrtel">Telefon: 
                 <?php foreach ( (array) get_post_meta( $post->ID, '_addr_telefon', true ) as $key => $telszam ) {  ?>
                   <?php if ($key>0) {echo ', ';} ?>
-                  <a href="tel:<?php echo $telszam?>"><?php echo $telszam; ?></a><?php } ?>
+                  <a class="telcsi-<?php echo $key; ?>" href="tel:<?php echo $telszam?>"><?php echo $telszam; ?></a><?php } ?>
               </p>
               <p class="addrmail">Email: <?php echo get_post_meta( $post->ID, '_addr_email', true ); ?></p>
               <p class="addrurl">Web: <?php echo get_post_meta( $post->ID, '_addr_url', true ); ?></p>
             </div>
-          </div>
+          </section>
 
-          <div class="widget widget--open widget--intezmeny">
-            <h3 class="widget__title">Rendelési idő</h3>
+          <section class="widget widget--open widget--intezmeny">
             <div class="widget__body">
+              <h3 class="widget__title">Rendelési idő</h3>            
               <?php echo wpautop(get_post_meta( $post->ID, '_addr_nyitva', true )); ?>
             </div>
-          </div>
+          </section>
 
         </div>
       </aside><!-- /.sidebar -->
-      <div class="entry__content">
+      <div class="entry__content int__content">
         <?php the_content(); ?>
 
         <?php if ($accordion = get_post_meta( get_the_ID(), '_data_accordion', true )) : ?>
@@ -72,8 +92,9 @@
                 <div class="panel">
                   <div class="panel-heading" role="tab" id="heading-<?php echo $key; ?>">
                     <h3 class="panel-title">
-                      <a class="" data-toggle="collapse" href="#collapse-<?php echo $key; ?>" aria-expanded="false" aria-controls="collapsexample-<?php echo $key; ?>">
+                      <a class="collapsed" data-toggle="collapse" href="#collapse-<?php echo $key; ?>" aria-expanded="false" aria-controls="collapsexample-<?php echo $key; ?>">
                         <?php echo $collapsible['title']; ?>
+                        <span class="panel-icon"><i class="ion ion-ios-close-empty"></i></span>
                       </a>
                     </h3>
                   </div>
@@ -100,15 +121,18 @@
       <aside class="sidebar sidebar--lower" role="complementary">
         <div class="sidebar--inner">
           <nav class="widget widget--sidebarnav" role="navigation">
+          <figure class="navill">
+            <?php echo get_the_post_thumbnail( $parent_id, 'tiny916'); ?> 
+          </figure>
             
-            <h3 class="subnav__title">Intézmények</h3>
+            <!--h3 class="subnav__title">Intézmények</h3-->
             <?php
-              if (has_nav_menu('intezmeny_navigation')) :
+             /* if (has_nav_menu('intezmeny_navigation')) :
                 wp_nav_menu(array('theme_location' => 'intezmeny_navigation', 'menu_class' => 'subnav'));
-              endif;
+              endif;*/
              ?>
             </nav>
-           <?php include roots_sidebar_path(); ?>
+           <?php //include roots_sidebar_path(); ?>
           </div>
       </aside><!-- /.sidebar -->
       <footer>

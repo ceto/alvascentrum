@@ -13,11 +13,11 @@ Template Name: Intézmények listázása
 
        	echo get_the_post_thumbnail($current_id,'tiny916'); ?> 
       </figure>
-	    <!-- <h3 class="subnav__title">Intézmények</h3> -->
-	    <?php /*
+	    <h3 class="subnav__title">Intézmények</h3>
+	    <?php 
 	      if (has_nav_menu('intezmeny_navigation')) :
 	        wp_nav_menu(array('theme_location' => 'intezmeny_navigation', 'menu_class' => 'subnav'));
-	      endif; */
+	      endif; 
 	     ?>
 	  </nav>
   </div>

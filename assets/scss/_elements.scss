@@ -3,6 +3,7 @@
 	//padding-top:2em;
 	//padding-bottom: 2em;
 	margin:0 auto;
+	padding-bottom: 2em;
 
 	@include bp($s2){
 		width:75%;
@@ -84,15 +85,6 @@
 
 
 
-.mapblock {
-	height:300px;
-	margin-top:3em;
-	#map-canvas { 
-		height: 100%;
-		margin: 0;
-		padding: 0;
-	}
-}
 
 
 .related__entries {

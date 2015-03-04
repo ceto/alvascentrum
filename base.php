@@ -20,47 +20,49 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <![endif]-->
     
   <div class="container"> 
-  <?php
-    do_action('get_header');
-    get_template_part('templates/header');
-  ?>
-  <div class="document" role="document">
-    
- <?php if (is_singular('intezmeny')): ?>
-    <div class="subcsusza">
-      <div class="subcsusza__side">
-        <div class="side__inner">
-          <a href="#" class="btn--sideclose"><i class="ion ion-close"></i></a>
-          <?php get_template_part('/templates/jelentkezes','form'); ?>
-        </div>
-      </div>
+    <?php
+      do_action('get_header');
+      get_template_part('templates/header');
+    ?>
+    <div class="document" role="document">
 
-      <div class="subcsusza__content">
-<?php endif; ?>
 
-        <header class="mobileheader">
-          <a class="doc__brand" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
-          <a href="#" class="navbar-toggle">Menü <i class="ion ion-navicon-round"></i></a>
-        </header>
-        <?php if ( (is_page_template('template-torzslista.php')) || (is_page_template('template-intezmenylista.php')) ) : ?>
-          <?php get_template_part('templates/torzs','header'); ?>
-        <?php endif; ?>
+     <?php if (is_singular('intezmeny')): ?>
+        <div class="subcsusza">
+          <div class="subcsusza__side">
+            <div class="side__inner">
+              <a href="#" class="btn--sideclose"><i class="ion ion-close"></i></a>
+              <?php get_template_part('/templates/jelentkezes','form'); ?>
+            </div>
+          </div>
 
-        <main class="main <?php echo ( !is_front_page() )?'main--hassidebar':''; ?>" role="main">
-            <?php include roots_template_path(); ?>
-        </main><!-- /.main -->
+          <div class="subcsusza__content">
+    <?php endif; ?>
 
-      <?php get_template_part('templates/footer'); ?>
+          <header class="mobileheader">
+            <a class="doc__brand" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
+            <a href="#" class="navbar-toggle">Menü <i class="ion ion-navicon-round"></i></a>
+          </header>
+          <?php if ( (is_page_template('template-torzslista.php')) || (is_page_template('template-intezmenylista.php')) ) : ?>
+            <?php get_template_part('templates/torzs','header'); ?>
+          <?php endif; ?>
 
-<?php if (is_singular('intezmeny')): ?>
-    </div><!--/.subcsusza__content -->
+          <div class="main <?php echo ( !is_front_page() )?'main--hassidebar':''; ?>" role="main">
+              <?php include roots_template_path(); ?>
+          </div><!-- /.main -->
+        
 
-    </div> <!--/.subcsusza -->
-<?php endif; ?>
+        <?php get_template_part('templates/footer'); ?>
 
-  </div><!-- /.document -->
+    <?php if (is_singular('intezmeny')): ?>
+        </div><!--/.subcsusza__content -->
 
-    </div><!-- /.container -->
+        </div> <!--/.subcsusza -->
+    <?php endif; ?>
+
+    </div><!-- /.document -->
+
+  </div><!-- /.container -->
 
 
   <?php wp_footer(); ?>

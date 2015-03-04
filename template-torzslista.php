@@ -30,11 +30,11 @@ Template Name: Törzsoldalak listázása
           <figure class="navill">
             <?php echo get_the_post_thumbnail( $current_id, 'tiny916'); ?> 
           </figure>
-          <!-- <h3 class="subnav__title"><?php echo get_the_title( $current_id ); ?></h3> -->
-          <?php /*
+          <h3 class="subnav__title"><?php echo get_the_title( $current_id ); ?></h3>
+          <?php 
             if (has_nav_menu($submenu)) :
               wp_nav_menu(array('theme_location' => $submenu, 'menu_class' => 'subnav'));
-            endif; */
+            endif; 
           ?>
         </nav> 
   </div>

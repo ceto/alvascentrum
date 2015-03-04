@@ -1,13 +1,29 @@
 .panel {
-  margin:0 0 1em;
+  margin:0 0 1.25em;
 }
 .panel-heading {
+  position: relative;
   border-bottom: 1px solid $blue-header;
-  padding:0.5em 0;
+  padding:0.5em 0 0.5em 0;
+
 }
+.panel-icon {
+  position: absolute;
+  right:0.5em;
+  top:0.5em;
+  font-size: 1.25em;
+  line-height: 1;
+
+}
+
+
+  .collapsed .panel-icon i:before {
+      content:'\f3d0' !important;
+  }
+
 .panel-title {
   font-weight: normal;
-  margin:0;
+  margin:0 !important;
   a {
     color: $gray-text;
     display: block;
@@ -23,5 +39,5 @@
 }
 
 .panel-body {
-  padding:1em 0 2em;
+  padding:0 0 1em;
 }
