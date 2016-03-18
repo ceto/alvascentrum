@@ -42,7 +42,8 @@
 	margin:0 0 4em; 
 	@include bp($s4){
 		width:48%;
-		display:inline-block;
+		display:block;
+		float:left;
 		vertical-align: top;
 		&:nth-of-type(2n+1){
 			margin-right:4%;
