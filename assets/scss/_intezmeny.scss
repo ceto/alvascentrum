@@ -47,7 +47,8 @@
 
   @include clearfix();
   @include bp($s1) {
-    display: inline-block;
+    display: block;
+    float:left;
 
     width: 48%;
 
